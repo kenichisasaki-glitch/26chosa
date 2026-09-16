@@ -1,0 +1,1533 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="author" content="GREO合同会社">
+<title>令和8年 岩手県地価調査レポート｜GREO合同会社</title>
+<style>
+  :root{
+    --paper:#fcfcfb; --ink:#191a1c; --ink2:#2f3134; --mute:#54575d;
+    --hair:#dfe0e3; --hair2:#ecedef;
+    --gold:#a8842c; --sand:#f4f2ec;
+    --jyu:#059669; --sho:#7c3aed; --kou:#d97706;
+    --up:#dc2626; --dn:#2563eb;
+  }
+  *{box-sizing:border-box;margin:0;padding:0;}
+  html,body{
+    font-family:"Yu Gothic UI","Yu Gothic",Meiryo,sans-serif;
+    color:var(--ink); background:#c9c9c4;
+    -webkit-font-smoothing:antialiased; text-rendering:optimizeLegibility;
+    font-feature-settings:"palt","kern"; font-weight:400;
+  }
+  .page{
+    width:210mm;min-height:297mm;background:var(--paper);
+    padding:11mm 17mm 15mm 17mm; margin:10mm auto;
+    position:relative;overflow:hidden;
+    box-shadow:0 18px 50px rgba(20,18,10,.25);
+  }
+  .mast{
+    display:flex;justify-content:space-between;align-items:baseline;
+    padding-bottom:2mm;border-bottom:.55mm solid var(--ink);
+    position:relative;margin-bottom:5mm;
+  }
+  .mast::after{content:"";position:absolute;left:0;right:0;bottom:-1.3mm;height:.2mm;background:var(--gold);}
+  .mast .a{font-size:8pt;letter-spacing:.28em;font-weight:800;}
+  .mast .a i{font-style:normal;color:var(--gold);}
+  .mast .b{font-size:7.4pt;letter-spacing:.26em;color:var(--mute);font-weight:700;}
+  .foot{
+    position:absolute;left:17mm;right:17mm;bottom:7mm;
+    display:flex;justify-content:space-between;align-items:center;
+    padding-top:1.6mm;border-top:.2mm solid var(--hair);
+  }
+  .foot .l{font-size:7.4pt;letter-spacing:.16em;color:var(--mute);font-weight:700;}
+  .foot .r{font-family:"Segoe UI";font-size:8pt;font-weight:700;letter-spacing:.22em;color:var(--ink);}
+  .foot .r i{font-style:normal;color:var(--gold);}
+  .kick{display:flex;align-items:center;gap:3mm;margin-bottom:2.6mm;}
+  .kick .n{font-family:"Segoe UI";font-weight:300;font-size:23pt;line-height:1;color:var(--gold);letter-spacing:-.02em;}
+  .kick .en{font-size:7.5pt;letter-spacing:.4em;font-weight:800;color:var(--ink);padding-top:1mm;}
+  .kick .ln{flex:1;height:.2mm;background:var(--hair);}
+  .kick .dt{font-size:7.6pt;letter-spacing:.18em;color:var(--mute);font-weight:700;}
+  .hl{
+    font-family:"Yu Mincho",YuMincho,"Hiragino Mincho ProN",serif;
+    font-size:20.5pt;font-weight:700;letter-spacing:.04em;line-height:1.3;
+  }
+  .hl em{font-style:normal;color:var(--gold);}
+  .dek{margin-top:2.6mm;font-size:9.9pt;line-height:1.72;color:var(--ink2);max-width:164mm;}
+  .dek b{color:var(--ink);font-weight:800;}
+  .num{font-family:"Segoe UI",Verdana,sans-serif;}
+  .bigs{
+    display:grid;grid-template-columns:repeat(4,1fr);
+    border-top:.4mm solid var(--ink);border-bottom:.15mm solid var(--hair);
+    margin:4.5mm 0;
+  }
+  .bigs .b{padding:3.2mm 4mm 2.8mm;border-left:.15mm solid var(--hair);}
+  .bigs .b:first-child{border-left:none;padding-left:.5mm;}
+  .bigs .l{font-size:7.7pt;letter-spacing:.12em;color:var(--mute);font-weight:800;height:7.8mm;display:block;line-height:1.5;}
+  .bigs .v{font-family:"Segoe UI";font-weight:300;font-size:26pt;line-height:1.15;color:var(--ink);}
+  .bigs .v small{font-size:9pt;color:var(--ink2);margin-left:1mm;font-weight:600;}
+  .bigs .v.u{color:var(--up);} .bigs .v.d{color:var(--dn);}
+  .bigs .s{display:block;font-size:7.6pt;font-weight:700;color:var(--mute);margin-top:.8mm;}
+  .card{background:#fff;border:.15mm solid var(--hair);padding:3mm 3.5mm 2.5mm;}
+  .card .h{
+    display:flex;justify-content:space-between;align-items:baseline;
+    margin-bottom:1.6mm;padding-bottom:1.4mm;border-bottom:.15mm solid var(--hair2);
+  }
+  .card .h .t{font-size:9pt;font-weight:800;letter-spacing:.1em;}
+  .card .h .t::before{content:"";display:inline-block;width:2.2mm;height:2.2mm;background:var(--gold);margin-right:1.8mm;}
+  .card .h .s{font-size:7.4pt;letter-spacing:.14em;color:var(--mute);font-weight:700;}
+  .card .cap,.cap{font-size:8pt;color:var(--mute);font-weight:700;letter-spacing:.03em;margin-top:1.6mm;line-height:1.6;}
+  .note{
+    margin-top:3.5mm;padding:2.8mm 4.5mm;background:#fff;border:.15mm solid var(--hair);
+    border-left:.9mm solid var(--gold);
+    font-size:9.1pt;line-height:1.68;color:var(--ink2);
+  }
+  .note h5{font-size:8.2pt;letter-spacing:.24em;font-weight:800;color:var(--ink);margin-bottom:1.2mm;}
+  .note b{color:var(--ink);}
+  .note em{font-style:normal;color:var(--gold);font-weight:800;}
+  .tw2{display:grid;grid-template-columns:1fr 1fr;gap:5mm;}
+  .cv-hi{border-top:.55mm solid var(--ink);}
+  .cv-hi .it{display:grid;grid-template-columns:10.5mm 1fr;gap:2mm;padding:2.3mm 0;border-bottom:.15mm solid var(--hair2);}
+  .cv-hi .it .n{font-family:"Segoe UI";font-weight:300;font-size:15.5pt;color:var(--gold);line-height:1;}
+  .cv-hi .it h5{font-size:9.8pt;font-weight:800;letter-spacing:.04em;margin-bottom:1mm;}
+  .cv-hi .it p{font-size:8.8pt;line-height:1.62;color:var(--ink2);}
+  .cv-hi .it p b{color:var(--ink);font-weight:800;}
+  .cv-hi .it p em{font-style:normal;color:var(--up);font-weight:800;}
+  .cv-hi .it p u{text-decoration:none;color:var(--dn);font-weight:800;}
+  table.rk{width:100%;border-collapse:collapse;}
+  table.rk th{font-size:7.6pt;letter-spacing:.08em;color:var(--mute);font-weight:800;text-align:left;
+    padding:0 1.2mm 1mm;border-bottom:.4mm solid var(--ink);white-space:nowrap;}
+  table.rk th.r{text-align:right;}
+  table.rk td{padding:1.3mm 1.2mm;border-bottom:.15mm solid var(--hair2);font-size:8.6pt;vertical-align:baseline;}
+  table.rk td.n{font-weight:800;white-space:nowrap;}
+  table.rk td.a{color:var(--ink2);font-size:8.1pt;}
+  table.rk td.r{font-family:"Segoe UI";font-weight:700;text-align:right;white-space:nowrap;}
+  table.rk td.r.u{color:var(--up);} table.rk td.r.d{color:var(--dn);}
+  table.rk td.sub{background:var(--sand);font-size:7.8pt;font-weight:800;letter-spacing:.12em;color:var(--ink);padding:1.4mm 1.2mm;border-left:.8mm solid var(--gold);}
+  table.rk.sm td{padding:1.3mm 1mm;font-size:8.3pt;}
+  table.rk.sm td.a{font-size:7.9pt;}
+  .ycip{display:inline-block;width:2.6mm;height:2.6mm;border-radius:50%;margin-right:1.2mm;vertical-align:-.2mm;}
+  .src-grid{display:grid;grid-template-columns:auto 1fr;gap:1mm 3mm;
+    font-size:7.7pt;letter-spacing:.04em;color:var(--mute);line-height:1.62;font-weight:600;}
+  .src-grid .k{font-weight:800;color:var(--ink);white-space:nowrap;letter-spacing:.1em;}
+  /* P3 ヒートマップ overlay */
+  .maphero{position:relative;margin-top:2mm;}
+  .maphero .ov{position:absolute;background:rgba(252,252,251,.94);border:.15mm solid var(--hair);
+    box-shadow:0 1mm 3mm rgba(20,18,10,.08);padding:2.4mm 3mm;}
+  .lgs{display:inline-flex;align-items:center;gap:1.3mm;font-size:8pt;font-weight:700;color:var(--ink2);white-space:nowrap;}
+  .lgs i{display:inline-block;width:3.2mm;height:3.2mm;border-radius:.5mm;}
+  .lgs b{color:var(--ink);font-weight:400;}
+  .lg-line{display:flex;align-items:center;gap:1.6mm;font-size:8.2pt;font-weight:700;color:var(--ink2);padding:.42mm 0;white-space:nowrap;}
+  .lg-line i{display:inline-block;width:3.4mm;height:3.4mm;border-radius:.5mm;}
+  .conc{background:var(--ink);color:#fff;padding:5mm 6mm;margin-top:4mm;border-radius:1mm;}
+  .conc .k{font-size:7.5pt;letter-spacing:.42em;color:var(--gold);font-weight:800;margin-bottom:2mm;}
+  .conc p{font-family:"Yu Mincho",YuMincho,serif;font-size:13.5pt;line-height:1.7;font-weight:700;}
+  .conc p em{font-style:normal;color:#e6c56a;}
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 / COVER ============ -->
+<section class="page">
+  <div class="mast">
+    <div class="a">GREO <i>MARKET REPORT</i> — LAND PRICE</div>
+    <div class="b">RELEASE 2026.09</div>
+  </div>
+
+  <p style="font-size:7.6pt;letter-spacing:.36em;font-weight:800;color:var(--gold);margin-bottom:3mm;">岩手県 地価調査レポート｜令和8年</p>
+  <h1 style="font-family:'Yu Mincho',YuMincho,'Hiragino Mincho ProN',serif;font-size:31pt;font-weight:700;line-height:1.32;letter-spacing:.02em;">地価の“潮目”が、<br>変わり始めたか。</h1>
+  <p class="dek" style="margin-top:3.5mm;">令和8年地価調査（価格時点7月1日・9月県公表）を、GREOが全343基準地から独自集計しました。県全体は下落が続く一方、<b>用途と場所で明暗がくっきり</b>——上昇の主役だった県央住宅地にブレーキがかかり、盛岡駅前と工業地だけが熱を保っています。</p>
+
+  <div class="bigs">
+    <div class="b"><div class="l">住宅地 平均変動率（256地点）</div><div class="v d">△0.7<small>%</small></div><span class="s">3年連続下落・下落幅拡大</span></div>
+    <div class="b"><div class="l">商業地 平均変動率（72地点）</div><div class="v d">△0.9<small>%</small></div><span class="s">33年連続下落・幅は横ばい</span></div>
+    <div class="b"><div class="l">工業地 平均変動率（13地点）</div><div class="v u">+1.1<small>%</small></div><span class="s">8年連続上昇・幅は縮小</span></div>
+    <div class="b"><div class="l">上昇した基準地（宅地系340中）</div><div class="v">98<small>地点</small></div><span class="s">前回119地点から約2割減</span></div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:87mm 1fr;gap:5mm;align-items:start;">
+    <div class="card" style="padding-bottom:2mm;">
+      <div class="h"><span class="t">全343基準地 変動率マップ</span></div>
+      <svg viewBox="0 0 374.9 568" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+<polygon points="221.0,-17.6 453.1,-17.6 453.1,600.8 225.8,600.8 221.0,378.8" fill="#dfe8ef"/>
+<path d="M97.8 263.0L105.9 251.5L110.4 255.1L119.7 250.8L118.5 245.1L115.5 243.1L122.9 244.6L130.2 230.4L139.3 230.2L139.3 219.9L134.9 217.5L136.8 213.4L131.7 212.6L129.9 206.7L126.0 206.7L122.9 195.1L131.4 194.1L140.0 187.6L136.9 180.0L143.6 179.5L146.5 186.5L152.1 188.1L164.4 187.6L166.7 198.8L170.9 201.5L169.2 207.1L172.9 205.6L176.1 209.4L181.9 204.4L202.2 205.0L204.4 202.4L204.9 194.5L206.9 193.6L213.7 196.7L217.1 194.0L222.6 195.2L221.9 202.5L227.7 216.3L220.5 217.8L220.8 222.1L214.7 231.4L198.8 233.1L195.3 242.6L195.4 249.2L198.8 251.0L198.6 254.6L181.1 270.3L184.0 275.5L203.9 288.6L204.2 294.3L201.4 295.2L197.2 290.9L184.8 294.0L173.7 292.6L174.4 289.9L168.3 281.3L164.5 289.5L155.3 281.8L147.0 284.6L142.4 273.8L135.8 272.9L131.2 267.6L123.5 272.8L115.4 272.8L110.2 268.8L111.1 266.6L108.7 264.2L103.4 268.2L97.8 263.0Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M254.2 329.6L248.0 319.0L244.8 319.0L233.6 307.2L227.9 307.9L221.1 303.9L218.9 297.0L203.5 298.0L201.4 295.2L205.2 293.2L203.9 288.6L184.0 275.5L181.1 270.3L198.6 254.6L205.2 259.4L213.1 258.1L220.2 249.8L233.3 250.6L237.1 245.9L245.8 249.1L251.9 234.5L259.1 234.4L265.3 238.6L270.1 235.0L275.1 237.6L278.6 235.6L283.7 241.9L287.3 240.5L294.7 246.3L303.4 239.5L306.7 240.2L306.4 237.1L315.6 234.9L320.2 226.0L316.0 222.5L320.7 220.7L321.5 217.2L327.1 217.3L329.0 213.6L339.8 210.7L339.1 223.8L344.2 227.9L340.3 233.6L344.1 235.8L336.0 242.1L340.2 244.6L339.9 248.8L335.1 255.0L339.8 256.6L335.8 266.9L339.1 268.7L335.7 268.9L336.4 271.2L334.3 271.9L336.1 272.5L337.5 274.6L334.8 272.5L335.3 277.8L334.3 276.1L334.3 280.1L329.8 285.0L333.1 288.0L347.1 266.2L349.5 266.0L348.6 278.6L351.6 280.6L349.4 281.4L351.5 284.3L349.8 291.6L357.0 291.7L357.1 296.1L359.8 295.6L360.2 302.5L355.7 305.1L358.2 307.5L352.1 305.5L349.5 313.8L345.7 315.4L338.6 308.9L336.0 301.3L327.9 298.9L318.8 300.3L311.6 295.2L302.8 299.6L298.5 298.1L282.9 302.6L278.8 311.9L273.3 313.3L271.0 317.0L270.4 322.2L274.9 332.4L264.9 334.7L259.9 329.1L254.2 329.6Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M277.6 469.1L280.0 478.5L275.4 477.8L273.9 474.6L273.1 478.1L267.2 467.9L264.5 457.9L265.8 452.9L262.5 452.4L258.5 456.5L252.5 447.3L249.5 435.7L256.3 422.4L255.1 419.7L264.5 418.0L276.7 409.5L277.3 414.3L281.2 418.6L301.5 416.9L315.0 420.8L323.5 416.3L324.2 416.5L315.6 424.6L306.5 424.2L302.9 428.1L312.0 432.5L312.3 437.3L318.8 435.9L323.8 440.8L314.0 447.3L309.0 441.0L296.8 439.1L298.1 444.0L296.4 445.3L300.2 446.6L300.0 450.1L312.8 453.4L297.8 455.5L307.3 464.7L294.3 466.3L293.3 460.2L289.9 465.3L286.6 463.0L284.2 468.4L278.0 467.1L276.7 464.9L279.2 464.2L277.3 463.4L279.9 457.7L278.2 457.8L279.3 453.8L277.1 451.5L275.2 453.1L275.9 461.0L272.2 466.3L274.5 469.9L277.6 469.1Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M112.7 364.7L113.6 370.6L91.9 360.0L77.9 357.7L74.9 345.3L76.9 337.2L73.7 330.6L76.0 326.2L71.4 324.1L69.3 318.5L72.6 304.7L80.0 301.6L88.0 305.3L92.0 300.7L105.2 307.6L115.5 308.3L117.5 305.9L119.1 311.0L125.0 313.2L140.2 312.4L150.6 318.8L166.6 320.7L171.0 312.5L168.4 309.3L168.6 300.1L172.5 292.8L184.8 294.0L197.2 290.9L203.6 298.1L218.3 296.9L219.9 305.9L214.3 305.4L208.3 309.6L205.5 316.4L206.2 325.9L194.6 332.4L192.3 337.2L177.6 342.1L172.5 352.2L172.0 359.2L174.5 361.9L178.8 361.1L180.0 364.1L177.9 367.2L184.4 374.3L183.5 379.5L189.1 384.3L186.7 391.0L182.2 390.2L178.2 384.3L172.9 386.4L174.3 381.9L170.4 373.0L156.6 376.9L142.7 373.3L145.5 364.9L142.2 359.5L143.4 357.8L140.2 359.7L139.8 355.7L138.2 356.2L139.7 361.3L137.2 362.7L118.9 359.6L112.7 364.7Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M63.7 416.4L63.2 407.4L71.8 399.1L68.7 390.7L73.8 383.9L71.5 378.1L73.1 374.4L68.1 367.0L64.3 354.8L61.0 352.9L61.5 348.7L56.2 345.9L54.1 341.3L55.9 337.1L65.1 334.1L69.5 321.4L76.0 326.2L73.7 330.6L76.9 337.2L74.9 345.3L78.3 358.2L91.9 360.0L113.6 370.6L112.7 364.7L118.9 359.6L137.2 362.7L139.7 361.3L138.2 356.2L139.8 355.7L140.2 359.7L143.4 357.8L142.2 359.5L145.5 364.9L142.7 373.3L146.1 372.5L151.4 376.6L155.9 375.4L161.1 387.9L153.4 391.0L145.2 386.4L140.7 388.7L138.3 394.3L133.4 394.5L133.9 397.2L121.6 401.5L116.9 397.2L118.0 395.2L111.3 394.8L111.5 391.8L108.6 394.7L106.6 393.1L98.2 398.5L85.2 400.4L79.2 412.0L69.6 418.3L63.7 416.4Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M218.6 129.2L217.0 124.3L212.6 122.6L210.3 114.2L215.1 109.1L217.9 100.0L216.6 96.8L219.8 94.4L218.9 91.5L225.0 86.8L226.3 82.4L229.2 84.7L241.6 82.9L256.7 89.0L266.6 87.6L264.2 80.7L276.9 79.8L275.4 78.3L277.6 70.7L286.4 70.7L291.7 63.0L298.2 70.6L302.9 87.8L296.0 88.6L293.9 92.9L295.7 93.7L297.4 96.8L295.9 94.2L292.8 96.3L307.2 103.4L313.0 111.2L309.6 114.9L299.4 113.8L298.5 120.1L291.9 118.8L288.8 122.0L287.7 120.0L279.7 127.4L278.1 133.2L284.2 144.4L275.4 153.6L267.4 151.0L259.5 154.4L251.0 148.1L244.9 149.0L237.8 142.0L228.9 142.0L227.1 133.3L218.6 129.2Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M196.9 410.2L192.1 395.4L186.1 391.4L189.1 384.3L183.5 379.5L184.4 374.3L177.9 367.2L180.0 364.1L178.8 361.1L174.5 361.9L172.0 359.2L172.5 352.2L177.6 342.1L192.3 337.2L194.6 332.4L206.2 325.9L205.5 316.4L208.3 309.6L214.3 305.4L219.9 305.9L218.3 296.9L221.1 303.9L227.9 307.9L233.6 307.2L244.8 319.0L248.0 319.0L254.2 329.6L259.9 329.1L265.3 334.8L274.9 332.4L274.9 338.4L281.2 341.7L274.7 345.1L267.9 343.2L262.6 345.4L260.4 349.9L258.7 361.1L261.6 369.6L260.2 372.1L268.7 374.2L265.6 380.3L269.7 387.5L259.7 396.9L253.9 394.0L246.3 394.1L243.8 396.7L236.2 391.6L231.0 396.8L226.1 395.1L221.6 399.7L215.5 399.7L215.9 407.5L207.3 410.2L206.5 413.0L196.9 410.2Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M78.4 500.5L76.9 497.0L69.8 496.8L55.9 485.4L43.4 487.3L41.1 473.9L46.2 467.7L52.0 469.6L60.2 467.3L65.7 459.2L73.1 458.0L80.2 476.0L94.8 475.0L102.7 482.5L113.9 486.9L125.6 483.9L125.7 490.0L130.0 487.9L129.9 484.1L132.9 481.0L143.9 478.2L145.7 473.9L142.2 468.1L148.8 463.7L147.3 461.6L151.4 455.8L157.4 453.8L164.7 445.1L175.6 447.6L172.8 441.4L172.7 432.1L181.9 429.9L185.5 432.4L185.9 427.2L191.8 425.5L192.8 422.5L195.1 424.7L194.8 429.3L198.2 430.9L199.8 439.8L209.0 440.0L216.8 449.6L216.0 456.2L211.2 461.9L214.6 470.3L212.3 476.9L215.9 479.1L219.5 488.1L217.4 494.3L219.0 501.5L209.0 513.2L209.4 517.6L212.7 519.4L208.7 525.5L210.9 533.0L203.7 534.0L206.2 542.0L199.9 547.5L200.2 541.8L195.8 540.5L195.0 537.4L191.4 538.6L185.0 533.4L180.5 535.2L176.0 530.0L173.7 531.3L173.2 539.5L165.4 538.4L161.5 549.8L151.5 553.7L146.6 544.8L133.0 541.0L133.6 533.6L129.0 532.1L129.0 529.3L124.3 530.0L124.4 525.6L128.9 526.0L134.6 519.6L132.9 512.8L125.0 512.8L121.6 509.5L107.9 513.1L103.8 510.0L96.3 513.8L88.5 503.1L80.8 498.9L78.4 500.5Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M213.2 476.1L214.6 470.3L211.3 460.5L216.0 456.2L216.8 449.6L211.9 443.8L212.8 434.3L219.4 439.0L224.6 438.6L227.0 443.7L228.6 440.6L232.7 443.6L235.4 438.5L244.7 441.9L251.6 438.3L252.4 447.3L258.1 456.1L265.9 453.1L264.4 455.8L267.2 468.0L274.2 479.6L272.2 478.8L269.0 483.5L274.2 484.3L276.8 489.1L272.8 489.6L270.8 493.6L267.2 490.8L267.1 485.2L261.5 479.8L265.3 474.5L261.9 472.1L252.1 473.1L252.5 483.4L237.3 475.2L226.6 476.7L223.1 473.1L218.5 474.7L216.9 480.9L213.2 476.1Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M280.7 418.5L277.3 414.3L276.9 409.3L270.1 404.5L272.6 399.8L271.4 390.1L265.6 380.3L268.7 374.2L260.2 372.1L261.6 369.8L259.0 355.5L262.6 345.4L280.0 343.6L281.3 349.9L288.3 350.4L291.9 356.4L304.4 357.5L314.3 364.8L322.1 364.1L317.8 368.6L322.1 371.2L332.4 366.0L337.2 367.0L342.4 362.7L335.9 374.7L315.6 377.8L325.0 383.4L325.9 388.2L315.9 387.2L319.5 392.6L316.3 395.5L322.0 395.2L322.0 397.7L324.1 398.6L325.7 395.9L336.1 394.4L329.5 397.3L332.2 402.8L330.3 405.1L324.7 403.3L325.5 405.6L319.8 408.9L315.6 407.7L316.5 411.2L309.9 409.8L312.1 411.2L310.6 413.3L316.5 416.5L324.2 415.4L323.0 417.2L315.0 420.8L301.5 416.9L280.7 418.5Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M130.1 126.4L124.7 113.5L113.9 112.3L105.2 103.7L105.3 84.9L117.4 76.7L124.2 75.7L125.7 74.0L123.2 67.7L132.5 61.5L152.2 56.8L162.9 46.0L167.1 47.5L171.4 40.9L178.0 39.5L181.0 42.6L180.4 47.2L184.5 50.7L185.6 61.6L187.7 62.0L193.0 82.3L184.9 85.7L171.0 77.0L166.7 79.6L164.6 77.1L162.3 86.2L145.6 96.3L143.5 105.3L145.3 115.6L138.9 123.3L138.9 127.8L130.1 126.4Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M68.9 196.7L63.3 181.1L63.9 171.8L61.0 164.7L63.5 151.8L60.8 133.1L68.3 126.8L69.7 120.7L67.3 120.0L66.3 114.8L70.3 106.9L64.4 102.4L72.5 95.8L71.8 93.2L75.6 86.4L84.3 84.8L84.1 80.5L87.8 78.3L93.8 87.1L105.4 86.7L105.1 103.6L107.4 107.0L115.8 113.0L124.7 113.5L130.1 126.4L138.3 129.8L135.2 140.7L129.6 143.7L128.7 148.9L130.3 158.7L135.4 166.8L130.1 174.0L134.1 175.8L140.0 187.5L131.4 194.1L119.9 196.3L118.3 200.5L112.7 198.7L99.1 203.6L98.9 206.5L90.7 203.8L84.1 207.6L74.2 205.5L68.9 196.7Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M98.8 478.0L93.8 474.7L79.5 475.6L73.1 458.0L65.7 459.2L60.2 467.3L46.8 468.4L48.3 460.7L52.4 455.8L49.8 454.6L50.5 449.3L38.3 446.6L40.9 439.4L39.1 436.4L42.6 434.6L37.6 429.4L43.6 420.7L49.0 418.0L55.6 417.9L58.0 421.6L72.1 416.3L97.2 431.3L106.3 432.0L125.2 416.1L133.6 413.5L129.5 411.1L130.1 403.6L124.2 400.6L134.1 397.1L133.4 394.5L138.3 394.3L140.7 388.7L145.2 386.4L153.4 391.0L161.1 388.0L156.4 377.9L159.7 374.1L170.5 373.0L174.3 381.9L172.9 386.4L178.2 384.3L181.2 389.5L192.3 395.7L192.0 399.1L198.2 409.4L190.0 414.0L193.9 416.3L193.4 421.3L191.8 425.5L185.9 427.2L185.6 432.3L181.9 429.9L172.7 432.1L172.8 441.4L175.6 447.6L164.6 445.1L157.4 453.8L149.6 457.5L149.4 461.3L147.3 461.6L148.8 463.8L138.0 470.0L132.5 467.2L128.0 469.4L124.3 464.8L125.9 472.1L109.9 473.5L98.8 478.0Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M102.8 245.9L104.0 231.4L99.6 227.9L101.1 211.9L99.1 203.6L112.7 198.7L118.3 200.5L122.9 195.1L126.0 206.7L129.9 206.7L131.7 212.6L136.8 213.4L134.9 217.5L139.3 219.9L139.3 230.1L130.2 230.4L122.9 244.6L115.9 242.6L119.7 250.8L111.1 254.9L106.1 251.4L109.5 251.3L104.5 250.3L102.8 245.9Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M68.2 302.0L63.7 289.6L59.1 285.5L51.7 286.7L48.7 282.7L55.3 267.8L55.4 255.7L43.7 241.0L50.8 237.8L51.2 234.0L61.7 222.4L59.9 218.6L45.8 211.2L47.3 204.6L45.6 198.7L49.7 194.3L56.3 192.9L62.9 199.4L68.9 196.7L74.2 205.5L80.6 207.1L90.7 203.8L98.4 206.0L101.1 211.9L99.6 227.9L104.0 231.4L102.7 246.4L104.5 250.3L109.5 251.3L102.1 254.4L103.5 257.4L101.6 255.8L103.3 257.7L97.6 262.9L103.4 268.2L108.7 266.0L108.0 264.0L111.0 266.5L110.1 268.7L112.2 270.3L109.6 273.7L112.7 276.4L110.4 278.7L114.0 284.3L113.4 287.7L108.9 286.4L107.3 291.0L101.4 292.8L91.6 290.1L89.4 294.9L92.0 300.7L88.2 305.2L79.3 301.6L72.8 304.5L69.9 309.7L66.9 306.0L68.2 302.0Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M196.5 189.4L197.5 183.6L189.9 174.3L190.8 166.1L181.3 165.4L173.7 160.3L173.5 153.5L169.0 146.9L171.8 144.2L169.6 137.8L175.2 140.3L187.8 135.3L181.9 127.0L180.9 121.3L183.3 115.8L179.1 114.1L188.2 108.6L195.9 108.9L192.8 113.7L197.4 116.5L200.1 123.0L206.4 124.1L211.7 119.7L212.9 123.1L217.0 124.3L220.3 132.0L227.0 133.1L228.4 146.0L232.8 149.6L242.8 170.6L239.8 176.9L235.5 179.4L236.5 183.9L233.7 187.4L225.0 185.1L218.6 187.2L215.9 196.4L202.8 194.1L196.5 189.4Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M146.5 186.4L144.8 180.4L136.9 180.0L130.1 174.0L135.4 166.8L130.3 158.6L129.6 143.7L135.2 140.7L137.6 131.2L145.6 137.9L154.7 137.8L160.3 143.5L166.6 143.6L171.9 149.4L173.7 160.3L181.3 165.4L190.8 166.1L190.0 174.4L197.5 183.6L195.8 187.0L198.1 189.6L197.1 191.8L204.8 194.1L204.5 202.3L202.2 205.0L180.7 204.7L176.1 209.4L172.9 205.6L169.2 207.1L170.9 201.5L166.7 198.8L164.4 187.6L146.5 186.4Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M92.7 301.1L89.5 295.2L91.6 290.1L106.0 291.6L108.9 286.4L113.4 287.7L115.8 282.8L120.7 284.1L123.3 290.1L129.3 288.0L128.8 290.0L131.8 291.1L130.1 293.1L135.8 288.2L141.2 290.4L147.5 283.2L153.7 281.7L164.8 289.6L168.3 281.3L174.4 290.0L168.6 300.1L168.4 309.3L171.0 312.5L166.6 320.7L150.6 318.8L140.2 312.4L125.0 313.2L119.1 311.0L117.5 305.9L115.5 308.3L105.2 307.6L92.7 301.1Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M122.6 289.3L120.6 284.1L113.1 283.7L110.4 278.7L112.7 276.4L109.5 272.2L113.0 270.3L123.5 272.8L131.2 267.6L135.8 272.9L142.4 273.8L146.9 283.9L141.2 290.4L135.8 288.2L130.2 293.1L131.8 291.1L128.7 287.6L126.0 290.4L122.6 289.3Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M59.5 421.1L41.3 411.2L40.9 406.3L46.9 402.0L47.1 398.3L29.8 387.5L29.7 379.9L23.9 378.9L24.0 372.5L27.5 367.9L19.5 357.1L20.3 352.4L14.0 350.0L16.6 345.9L15.3 342.3L21.8 339.3L19.8 331.9L21.0 329.0L31.4 321.6L28.8 315.7L35.6 303.9L32.7 294.7L38.7 293.0L41.1 287.6L45.2 286.7L45.6 282.4L51.8 286.7L59.6 285.7L63.7 289.6L63.3 292.8L68.6 302.4L66.9 306.3L71.6 312.3L69.1 315.0L70.6 321.5L65.1 334.1L55.9 337.1L54.1 341.3L56.2 345.9L61.5 348.7L61.0 352.9L67.6 360.6L68.1 367.0L73.1 374.2L71.5 378.1L73.8 383.6L68.7 390.7L71.7 399.2L63.2 407.3L64.0 417.7L59.5 421.1Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M103.5 432.8L72.1 416.3L79.2 412.0L82.5 402.8L111.5 391.8L111.3 394.8L118.0 395.2L116.9 397.2L119.6 400.5L129.7 403.2L129.5 411.1L133.6 413.5L125.2 416.1L120.3 422.1L103.5 432.8Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M100.3 478.6L109.8 473.5L125.9 472.1L124.3 464.8L130.0 469.8L132.5 467.2L138.0 470.0L142.2 468.1L145.7 473.9L143.9 478.2L132.9 481.0L129.9 484.1L130.7 486.9L130.0 487.9L125.7 490.0L126.0 484.0L113.9 486.9L102.7 482.5L100.3 478.6Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M224.7 438.7L214.5 433.9L211.9 441.8L206.1 438.9L199.9 439.9L198.2 430.9L194.8 429.3L195.1 424.7L192.6 422.1L193.9 416.3L190.0 414.0L198.2 410.0L206.6 413.0L207.3 410.2L215.9 407.5L215.5 399.7L221.6 399.7L226.1 395.1L231.0 396.8L236.2 391.6L243.8 396.7L246.3 394.1L253.9 394.0L259.7 396.9L267.7 389.5L271.4 390.1L272.6 399.8L270.1 404.5L276.9 409.3L264.5 418.0L255.1 419.7L256.3 422.4L249.5 435.7L251.6 438.3L244.7 441.9L235.4 438.5L232.7 443.6L228.6 440.6L227.0 443.7L224.7 438.7Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M281.3 349.9L280.1 339.9L274.9 338.4L275.2 331.9L270.4 322.2L272.4 314.2L278.8 311.9L281.6 306.1L289.9 310.9L298.5 326.2L304.1 328.2L310.1 340.5L316.8 347.1L326.1 345.0L331.5 347.1L328.4 353.3L330.5 356.5L334.5 353.8L335.3 355.6L329.9 362.8L322.6 361.0L322.5 364.3L314.3 364.8L304.4 357.5L291.9 356.4L288.3 350.4L281.3 349.9Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M311.3 341.2L304.1 328.2L298.5 326.2L289.9 310.9L282.1 306.7L282.9 302.6L298.5 298.1L302.8 299.6L311.6 295.2L318.8 300.3L329.4 299.0L336.0 301.3L338.6 308.9L346.3 316.0L345.8 322.8L341.0 320.5L332.3 323.4L332.7 329.1L336.6 334.4L342.0 330.5L344.3 332.8L345.3 326.5L351.9 320.6L355.5 320.2L358.2 324.4L352.5 332.4L354.1 338.8L350.8 342.1L346.2 338.6L344.5 343.8L338.8 344.4L337.4 338.5L331.7 347.3L326.1 345.0L317.9 347.5L311.3 341.2Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M197.3 235.2L214.8 231.3L220.8 222.1L220.5 217.8L227.7 216.3L221.9 202.5L222.6 195.2L217.1 194.0L216.6 189.8L225.0 185.1L233.6 187.5L236.5 183.9L235.5 179.4L242.9 170.7L232.8 149.6L228.4 146.0L230.7 141.5L237.8 142.0L244.9 149.0L251.0 148.1L259.5 154.4L267.4 151.0L275.4 153.6L283.6 146.7L296.9 152.3L293.1 156.5L294.6 163.3L287.3 189.4L296.7 190.4L300.7 187.9L304.6 197.2L313.0 201.2L315.7 200.2L314.1 197.2L316.8 201.9L322.8 200.9L333.3 192.5L336.1 193.4L338.0 199.6L336.9 212.3L321.5 217.2L320.7 220.7L316.0 222.5L320.2 226.0L315.6 234.9L306.4 237.1L306.7 240.2L303.4 239.5L294.7 246.3L287.3 240.5L283.7 241.9L278.6 235.6L275.1 237.6L270.1 235.0L265.3 238.6L259.1 234.4L251.9 234.5L245.8 249.1L237.1 245.9L233.3 250.6L220.2 249.8L213.1 258.1L203.2 259.4L195.4 249.2L197.3 235.2Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M315.6 200.3L304.6 197.2L300.7 187.9L296.7 190.4L287.2 189.3L293.5 164.8L303.3 166.1L311.7 163.3L313.2 169.0L331.0 159.9L334.1 171.6L332.8 172.5L333.7 174.0L333.6 174.1L333.7 174.1L333.6 174.3L333.5 174.3L333.5 174.4L329.8 173.9L328.1 178.3L333.3 192.5L322.7 200.9L316.8 201.9L314.1 197.2L315.6 200.3Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M311.3 163.4L303.3 166.1L294.1 164.1L292.7 158.4L294.7 154.4L302.9 150.2L303.9 144.0L305.0 142.2L307.8 139.1L313.4 141.7L320.5 153.9L327.3 153.7L330.6 160.2L313.2 169.0L311.3 163.4Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M210.7 78.5L206.1 68.1L190.1 70.9L187.7 61.9L185.6 61.6L184.5 51.8L192.0 48.3L195.9 40.3L198.3 43.5L206.7 37.5L216.1 37.4L229.7 46.6L240.8 38.2L242.9 42.3L248.5 43.2L242.0 48.3L241.4 53.6L238.2 55.3L241.4 58.1L240.0 61.8L242.9 63.5L241.9 68.7L248.2 71.4L248.0 79.3L241.3 80.6L239.4 84.3L226.4 82.4L224.8 86.9L210.7 78.5Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M279.3 134.9L279.7 127.4L287.6 120.1L288.8 122.0L291.9 118.8L298.5 120.1L300.0 113.6L304.7 115.4L300.5 124.7L302.4 133.2L307.7 139.2L302.7 150.4L297.3 152.8L284.7 148.9L284.1 141.1L279.3 134.9Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M217.9 100.0L214.1 111.6L210.4 113.7L211.7 119.7L206.4 124.1L199.6 122.6L197.4 116.5L192.8 113.7L197.0 105.9L192.5 95.3L194.6 87.3L190.1 70.9L206.1 68.1L210.9 79.8L222.6 86.2L218.9 91.5L219.3 95.6L216.6 96.8L217.9 100.0Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M242.1 80.2L248.1 79.2L248.2 71.4L241.9 68.7L242.9 63.5L240.0 61.8L241.4 58.1L238.2 55.1L248.5 43.2L241.5 40.0L240.8 30.3L244.2 26.1L258.8 20.9L265.6 14.0L283.1 39.7L283.3 44.2L285.9 45.1L286.7 46.0L287.9 54.8L293.2 62.7L286.4 70.7L277.6 70.7L275.4 78.3L276.9 79.8L264.2 80.7L266.6 87.6L250.0 87.8L241.6 83.1L242.1 80.2Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<path d="M159.9 142.9L154.7 137.8L145.0 137.6L137.6 131.2L138.9 123.3L145.3 115.6L143.5 105.3L145.6 96.3L162.3 86.2L164.6 77.1L166.7 79.6L171.0 77.0L184.9 85.7L193.0 82.3L194.5 89.0L192.5 95.3L196.6 107.5L187.9 108.7L179.1 114.1L183.3 115.8L180.9 121.3L181.9 127.0L187.8 135.3L175.2 140.3L169.6 137.8L171.8 144.2L169.0 146.9L166.5 143.6L159.9 142.9Z" fill="#efeeea" stroke="#cdcfc9" stroke-width="0.6"/>
+<circle cx="128.7" cy="237.3" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="127.2" cy="240.1" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="144.4" cy="266.3" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="136.5" cy="256.1" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="129.6" cy="249.7" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="125.7" cy="241.9" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="138.8" cy="251.6" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="138.6" cy="235.1" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="134.1" cy="267.5" r="2.8" fill="#991b1b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="133.3" cy="242.2" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="130.7" cy="246.1" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="134.7" cy="253.2" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="140.5" cy="245.0" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="123.0" cy="270.3" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="142.8" cy="248.8" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="139.9" cy="249.5" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="133.4" cy="240.3" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="139.0" cy="253.8" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="135.6" cy="259.6" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="137.9" cy="254.9" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="125.2" cy="240.8" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="138.7" cy="263.2" r="2.8" fill="#991b1b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="137.0" cy="268.2" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="141.8" cy="196.3" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="136.3" cy="263.5" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="130.0" cy="251.0" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="126.9" cy="252.1" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="133.3" cy="258.8" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="139.4" cy="231.8" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="137.5" cy="233.6" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="134.0" cy="237.8" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="132.9" cy="244.3" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="135.9" cy="242.0" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="138.4" cy="245.2" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="128.3" cy="247.7" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="131.3" cy="248.2" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="135.5" cy="247.3" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="139.8" cy="255.0" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="134.4" cy="255.9" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="146.4" cy="260.1" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="138.6" cy="267.3" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="142.7" cy="198.2" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="140.0" cy="272.0" r="2.8" fill="#991b1b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="128.4" cy="255.3" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="140.4" cy="206.2" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="139.6" cy="196.4" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="141.9" cy="246.6" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="126.5" cy="202.9" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="139.4" cy="268.5" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="131.2" cy="255.3" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="131.9" cy="239.6" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="131.6" cy="252.2" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="129.8" cy="248.1" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="127.4" cy="243.1" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="123.5" cy="264.2" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="145.5" cy="234.9" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="132.5" cy="250.9" r="2.8" fill="#991b1b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="134.2" cy="248.3" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="136.5" cy="250.3" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="135.7" cy="255.8" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="132.4" cy="249.9" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="134.2" cy="251.5" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="137.5" cy="251.4" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="136.5" cy="265.5" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="132.6" cy="251.4" r="2.8" fill="#991b1b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="133.6" cy="241.2" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="139.9" cy="270.6" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="131.4" cy="249.6" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="140.0" cy="206.3" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="124.5" cy="248.6" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="128.2" cy="256.6" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="144.6" cy="278.2" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="139.6" cy="210.3" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="285.0" cy="270.2" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="335.3" cy="268.1" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="325.4" cy="271.0" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="330.0" cy="277.2" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="330.9" cy="271.7" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="332.3" cy="266.1" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="332.9" cy="242.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="293.7" cy="276.6" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="335.4" cy="240.5" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="334.3" cy="224.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="302.9" cy="273.1" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="264.6" cy="284.5" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="262.6" cy="310.1" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="329.7" cy="271.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="330.0" cy="269.7" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="324.5" cy="272.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="333.0" cy="275.8" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="274.6" cy="452.8" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="271.1" cy="443.8" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="273.3" cy="450.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="272.0" cy="448.3" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="279.7" cy="464.5" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="294.1" cy="457.7" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="298.8" cy="436.9" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="303.2" cy="426.3" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="272.9" cy="473.2" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="272.1" cy="446.9" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="274.2" cy="453.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="273.6" cy="448.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="125.0" cy="350.0" r="2.8" fill="#991b1b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="157.4" cy="353.0" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="126.9" cy="359.1" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="130.1" cy="334.4" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="123.5" cy="343.6" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="131.4" cy="350.7" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="128.2" cy="345.1" r="2.8" fill="#991b1b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="127.1" cy="354.2" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="153.3" cy="350.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="158.9" cy="322.1" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="168.7" cy="324.9" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="166.5" cy="325.1" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="135.2" cy="319.0" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="162.2" cy="358.4" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="137.6" cy="315.0" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="125.0" cy="345.2" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="126.4" cy="350.0" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="168.4" cy="326.1" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="135.1" cy="318.1" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="154.5" cy="352.0" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="128.8" cy="348.2" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="129.6" cy="379.4" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="123.7" cy="390.5" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="129.0" cy="381.6" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="128.0" cy="377.7" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="126.9" cy="385.0" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="126.1" cy="380.8" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="118.3" cy="379.7" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="127.2" cy="379.5" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="106.1" cy="378.7" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="97.9" cy="376.1" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="124.2" cy="379.0" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="126.9" cy="382.8" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="122.2" cy="380.8" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="126.0" cy="376.0" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="129.7" cy="368.7" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="293.0" cy="92.4" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="287.3" cy="98.8" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="284.1" cy="101.5" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="287.0" cy="94.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="283.8" cy="94.5" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="238.8" cy="108.7" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="244.0" cy="126.8" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="285.1" cy="96.1" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="287.4" cy="96.7" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="293.7" cy="95.1" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="230.4" cy="366.0" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="226.7" cy="369.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="187.4" cy="364.6" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="231.3" cy="367.5" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="196.0" cy="357.4" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="229.6" cy="368.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="231.8" cy="366.9" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="134.6" cy="496.4" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="126.6" cy="495.0" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="134.6" cy="500.7" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="129.9" cy="493.0" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="123.9" cy="494.3" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="130.8" cy="499.9" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="160.3" cy="499.2" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="142.7" cy="526.2" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="140.8" cy="520.4" r="2.8" fill="#e5e7eb" stroke="#fff" stroke-width="0.5"/>
+<circle cx="153.6" cy="543.4" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="179.7" cy="474.7" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="197.5" cy="468.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="197.5" cy="470.1" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="180.4" cy="500.2" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="182.8" cy="501.2" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="171.7" cy="521.6" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="160.5" cy="477.0" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="164.3" cy="474.7" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="161.1" cy="488.3" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="132.0" cy="495.2" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="208.5" cy="493.9" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="203.0" cy="494.4" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="163.0" cy="503.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="165.5" cy="505.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="184.8" cy="516.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="186.4" cy="516.6" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="130.3" cy="494.8" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="128.4" cy="495.9" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="144.1" cy="528.1" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="179.0" cy="475.7" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="180.1" cy="500.0" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="165.0" cy="505.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="209.0" cy="493.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="184.2" cy="517.5" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="137.6" cy="498.6" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="252.1" cy="465.6" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="258.6" cy="471.0" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="249.0" cy="473.2" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="243.6" cy="465.3" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="314.3" cy="386.3" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="300.6" cy="388.0" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="311.9" cy="395.9" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="301.2" cy="392.0" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="306.3" cy="389.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="290.8" cy="393.1" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="307.4" cy="389.0" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="313.5" cy="387.3" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="293.8" cy="393.9" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="172.1" cy="67.5" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="168.0" cy="76.5" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="173.9" cy="55.9" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="174.5" cy="70.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="136.2" cy="98.2" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="142.1" cy="93.1" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="170.7" cy="73.3" r="2.8" fill="#e5e7eb" stroke="#fff" stroke-width="0.5"/>
+<circle cx="170.6" cy="71.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="136.8" cy="98.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="171.9" cy="62.9" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="121.7" cy="184.5" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="121.4" cy="175.1" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="121.5" cy="188.0" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="114.8" cy="171.3" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="93.4" cy="183.1" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="111.0" cy="179.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="91.0" cy="188.8" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="110.7" cy="125.0" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="88.1" cy="111.4" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="110.8" cy="122.9" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="121.9" cy="174.5" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="110.5" cy="125.3" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="133.6" cy="431.6" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="133.5" cy="437.9" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="134.1" cy="426.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="130.6" cy="428.8" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="114.3" cy="461.3" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="131.7" cy="434.1" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="137.3" cy="431.6" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="137.2" cy="437.0" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="136.5" cy="418.7" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="144.1" cy="414.9" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="140.1" cy="410.7" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="142.2" cy="412.7" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="121.7" cy="467.7" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="125.5" cy="469.5" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="129.1" cy="456.9" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="128.7" cy="460.4" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="129.9" cy="458.1" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="120.7" cy="429.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="114.4" cy="432.2" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="95.4" cy="434.1" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="133.0" cy="429.6" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="135.3" cy="427.8" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="140.6" cy="411.4" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="142.5" cy="415.0" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="118.2" cy="442.6" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="136.1" cy="421.2" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="143.8" cy="406.7" r="2.8" fill="#991b1b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="135.0" cy="220.9" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="124.1" cy="240.0" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="119.0" cy="240.1" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="131.1" cy="227.9" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="125.0" cy="236.7" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="133.3" cy="229.2" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="123.2" cy="240.5" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="125.9" cy="235.2" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="130.7" cy="229.6" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="89.3" cy="254.2" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="101.9" cy="248.9" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="91.3" cy="253.3" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="206.6" cy="144.1" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="210.1" cy="144.5" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="203.7" cy="142.5" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="206.8" cy="143.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="152.5" cy="165.1" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="149.0" cy="182.6" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="152.9" cy="167.2" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="139.1" cy="298.6" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="138.5" cy="296.6" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="138.9" cy="290.5" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="137.1" cy="297.4" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="139.6" cy="303.0" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="139.6" cy="298.4" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="139.2" cy="310.9" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="141.0" cy="280.0" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="140.8" cy="274.1" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="135.0" cy="282.1" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="125.0" cy="272.3" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="134.2" cy="278.4" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="135.5" cy="279.0" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="120.6" cy="273.6" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="144.0" cy="284.5" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="140.3" cy="278.9" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="136.5" cy="279.8" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="142.3" cy="279.7" r="2.8" fill="#991b1b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="44.7" cy="372.7" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="44.5" cy="375.0" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="49.9" cy="321.1" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="43.3" cy="365.7" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="37.0" cy="339.0" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="44.3" cy="374.2" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="126.9" cy="411.3" r="2.8" fill="#f59e8b" stroke="#fff" stroke-width="0.5"/>
+<circle cx="122.7" cy="412.0" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="122.9" cy="404.1" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="126.1" cy="410.9" r="2.8" fill="#d1d5db" stroke="#fff" stroke-width="0.5"/>
+<circle cx="118.2" cy="407.6" r="2.8" fill="#dc2626" stroke="#fff" stroke-width="0.5"/>
+<circle cx="126.3" cy="478.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="126.2" cy="477.3" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="127.4" cy="476.8" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="238.9" cy="428.5" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="244.2" cy="412.4" r="2.8" fill="#e5e7eb" stroke="#fff" stroke-width="0.5"/>
+<circle cx="235.3" cy="414.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="240.3" cy="429.3" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="315.4" cy="360.3" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="328.7" cy="356.8" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="315.8" cy="356.7" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="330.1" cy="327.0" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="325.3" cy="304.4" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="331.1" cy="322.6" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="294.1" cy="205.7" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="333.2" cy="206.1" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="327.5" cy="176.6" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="318.5" cy="180.5" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="316.0" cy="179.0" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="315.2" cy="153.9" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="315.4" cy="155.0" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="315.2" cy="154.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="212.5" cy="54.2" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="214.6" cy="56.5" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="213.7" cy="54.2" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="211.9" cy="53.3" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="299.2" cy="119.6" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="297.5" cy="122.9" r="2.8" fill="#93b8f0" stroke="#fff" stroke-width="0.5"/>
+<circle cx="298.5" cy="121.5" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="201.6" cy="89.5" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="202.2" cy="94.9" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="199.5" cy="76.1" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="202.2" cy="91.6" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="274.4" cy="27.2" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="253.5" cy="67.8" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="272.3" cy="27.2" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="285.6" cy="48.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="252.2" cy="64.5" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="274.1" cy="26.6" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<circle cx="252.5" cy="66.1" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="173.0" cy="89.3" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="171.6" cy="91.2" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="172.6" cy="92.5" r="2.8" fill="#1e3a8a" stroke="#fff" stroke-width="0.5"/>
+<circle cx="172.2" cy="87.4" r="2.8" fill="#3b82f6" stroke="#fff" stroke-width="0.5"/>
+<text x="136.2" y="254.3" text-anchor="start" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="800" font-size="11" fill="#191a1c" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:3;stroke-linejoin:round;">盛岡</text>
+<text x="133.6" y="497.7" text-anchor="start" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="800" font-size="11" fill="#191a1c" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:3;stroke-linejoin:round;">一関</text>
+</svg>
+      <p class="cap" style="margin-top:1mm;">赤＝上昇・青＝下落。P3で全面拡大。</p>
+    </div>
+    <div class="cv-hi">
+      <div class="it">
+        <span class="n num">01</span>
+        <div><h5>盛岡駅前だけが、熱い。</h5>
+        <p>商業地の最大上昇は盛岡駅前通の<em>+9.4%</em>（前年+6.2%から加速）。ホテル・インバウンド投資が駅前に集中し、県内の他の商業地とは別世界の動き。</p></div>
+      </div>
+      <div class="it">
+        <span class="n num">02</span>
+        <div><h5>県央の住宅地に、ブレーキ。</h5>
+        <p>盛岡+0.8%（前年2.2）、滝沢+2.1%（同3.6）、金ケ崎+0.9%（同2.3）。上昇は続くが勢いは半減——<b>建築費の高騰が住宅取得のコスト</b>を押し上げている。</p></div>
+      </div>
+      <div class="it">
+        <span class="n num">03</span>
+        <div><h5>工業地は、独歩高。</h5>
+        <p>物流・半導体の実需で8年連続上昇。最大は半導体関連が集積する<b>奥州・江刺の+4.8%</b>。ただし上昇幅は縮小し、こちらも一服の気配。</p></div>
+      </div>
+      <div class="it" style="border-bottom:none;">
+        <span class="n num">04</span>
+        <div><h5>勢いは、下向きに揃った。</h5>
+        <p>前回上昇していた119地点の<b>76%（90地点）で勢いが低下</b>。上昇→下落の転落は3地点で、うち2つは盛岡の人気住宅地、<b>緑が丘と向中野</b>。詳細はP4。</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div style="position:absolute;left:17mm;right:17mm;bottom:14mm;display:flex;justify-content:space-between;align-items:flex-end;border-top:.4mm solid var(--ink);padding-top:2.2mm;">
+    <div class="src-grid" style="max-width:120mm;">
+      <span class="k">出典</span><span>岩手県 令和8年度地価調査（公表資料一覧は最終ページ）。数値はすべて出典に依拠</span>
+      <span class="k">制作・発行</span><span>GREO合同会社（不動産鑑定士事務所・盛岡市）　2026年9月</span>
+    </div>
+    <div style="text-align:right;">
+      <div style="font-family:Verdana,sans-serif;font-weight:700;font-size:17pt;letter-spacing:.06em;">GRE<span style="color:var(--gold);">O</span></div>
+      <div style="font-size:6.8pt;letter-spacing:.3em;color:var(--mute);font-weight:700;">MARKET REPORT — LAND PRICE</div>
+    </div>
+  </div>
+
+  <div class="foot"><span class="l">令和8年 岩手県地価調査レポート ／ GREO合同会社</span><span class="r num">01 <i>/</i> 06</span></div>
+</section>
+
+<!-- ============ PAGE 2 / TREND ============ -->
+<section class="page">
+  <div class="mast">
+    <div class="a">GREO <i>MARKET REPORT</i> — LAND PRICE</div>
+    <div class="b">TREND</div>
+  </div>
+
+  <div class="kick"><span class="n num">01</span><span class="en">THE TREND</span><span class="ln"></span><span class="dt">20年の水面</span></div>
+  <h2 class="hl">一度顔を出した水面から、<em>再び沈む。</em></h2>
+  <p class="dek">住宅地は令和5年、23年ぶりにプラス圏へ浮上した——しかしそこが天井だった。以降3年連続で沈み、令和8年は下落幅が拡大。<b>全国平均（+1.0%）との差はむしろ開いている</b>。商業地は33年連続の下落ながら、下落幅は長期では縮小基調にある。</p>
+
+  <div class="tw2" style="margin-top:4mm;">
+    <div class="card"><div class="h"><span class="t">住宅地 平均変動率の推移</span><span class="s">H19-R8</span></div><svg viewBox="0 0 340 228" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+<line x1="30" y1="182.9" x2="282" y2="182.9" stroke="#e2e3e6" stroke-width="0.6"/>
+<text x="27" y="185.5" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">-6</text>
+<line x1="30" y1="149.5" x2="282" y2="149.5" stroke="#e2e3e6" stroke-width="0.6"/>
+<text x="27" y="152.1" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">-4</text>
+<line x1="30" y1="116.0" x2="282" y2="116.0" stroke="#e2e3e6" stroke-width="0.6"/>
+<text x="27" y="118.6" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">-2</text>
+<line x1="30" y1="49.1" x2="282" y2="49.1" stroke="#e2e3e6" stroke-width="0.6"/>
+<text x="27" y="51.7" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">+2</text>
+<line x1="30" y1="82.5" x2="282" y2="82.5" stroke="#191a1c" stroke-width="1"/>
+<text x="27" y="85.1" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="7.5" font-weight="700" fill="#191a1c">0</text>
+<text x="30.0" y="221" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">H19</text>
+<text x="96.3" y="221" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">H24</text>
+<text x="162.6" y="221" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">H29</text>
+<text x="202.4" y="221" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">R2</text>
+<text x="268.7" y="221" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">R7</text>
+<polyline points="30.0,94.3 43.3,102.6 56.5,149.5 69.8,139.4 83.1,136.1 96.3,124.4 109.6,112.7 122.8,102.6 136.1,99.3 149.4,95.9 162.6,92.6 175.9,87.6 189.2,84.2 202.4,94.3 215.7,90.9 228.9,80.9 242.2,70.8 255.5,67.5 268.7,65.8 282.0,65.8" fill="none" stroke="#a9adb4" stroke-width="1.6" stroke-dasharray="4 3" stroke-linejoin="round"/>
+<polyline points="30.0,126.0 43.3,129.4 56.5,144.4 69.8,152.8 83.1,161.2 96.3,146.1 109.6,119.3 122.8,104.3 136.1,97.6 149.4,100.9 162.6,100.9 175.9,102.6 189.2,95.9 202.4,100.9 215.7,95.9 228.9,92.6 242.2,80.9 255.5,85.9 268.7,85.9 282.0,94.3" fill="none" stroke="#191a1c" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="282.0" cy="94.3" r="3.4" fill="#a8842c" stroke="#fff" stroke-width="1"/>
+<text x="287.0" y="97.3" text-anchor="start" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="800" font-size="9.5" fill="#191a1c" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:3;stroke-linejoin:round;">R8 △0.7%</text>
+<text x="287.0" y="68.8" text-anchor="start" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="8" fill="#6d7076" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:3;stroke-linejoin:round;">全国 +1.0</text>
+<text x="334" y="12" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="8" fill="#6d7076">━ 岩手　- - 全国</text>
+<circle cx="242.2" cy="80.9" r="2.6" fill="none" stroke="#a8842c" stroke-width="1.6"/>
+<text x="238.2" y="72.9" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="8.2" fill="#3c3e42" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:3;stroke-linejoin:round;">R5 +0.1% 一度浮上</text>
+</svg></div>
+    <div class="card"><div class="h"><span class="t">商業地 平均変動率の推移</span><span class="s">H19-R8</span></div><svg viewBox="0 0 340 228" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+<line x1="30" y1="182.9" x2="282" y2="182.9" stroke="#e2e3e6" stroke-width="0.6"/>
+<text x="27" y="185.5" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">-6</text>
+<line x1="30" y1="149.5" x2="282" y2="149.5" stroke="#e2e3e6" stroke-width="0.6"/>
+<text x="27" y="152.1" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">-4</text>
+<line x1="30" y1="116.0" x2="282" y2="116.0" stroke="#e2e3e6" stroke-width="0.6"/>
+<text x="27" y="118.6" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">-2</text>
+<line x1="30" y1="49.1" x2="282" y2="49.1" stroke="#e2e3e6" stroke-width="0.6"/>
+<text x="27" y="51.7" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">+2</text>
+<line x1="30" y1="82.5" x2="282" y2="82.5" stroke="#191a1c" stroke-width="1"/>
+<text x="27" y="85.1" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="7.5" font-weight="700" fill="#191a1c">0</text>
+<text x="30.0" y="221" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">H19</text>
+<text x="96.3" y="221" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">H24</text>
+<text x="162.6" y="221" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">H29</text>
+<text x="202.4" y="221" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">R2</text>
+<text x="268.7" y="221" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">R7</text>
+<polyline points="30.0,65.8 43.3,95.9 56.5,181.2 69.8,159.5 83.1,149.5 96.3,134.4 109.6,117.7 122.8,100.9 136.1,90.9 149.4,82.5 162.6,74.2 175.9,64.1 189.2,54.1 202.4,87.6 215.7,90.9 228.9,74.2 242.2,57.5 255.5,42.4 268.7,35.7 282.0,34.0" fill="none" stroke="#a9adb4" stroke-width="1.6" stroke-dasharray="4 3" stroke-linejoin="round"/>
+<polyline points="30.0,174.5 43.3,172.9 56.5,194.6 69.8,196.3 83.1,189.6 96.3,177.9 109.6,152.8 122.8,134.4 136.1,124.4 149.4,124.4 162.6,119.3 175.9,116.0 189.2,109.3 202.4,112.7 215.7,114.3 228.9,111.0 242.2,102.6 255.5,100.9 268.7,97.6 282.0,97.6" fill="none" stroke="#191a1c" stroke-width="2.2" stroke-linejoin="round"/>
+<circle cx="282.0" cy="97.6" r="3.4" fill="#a8842c" stroke="#fff" stroke-width="1"/>
+<text x="287.0" y="100.6" text-anchor="start" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="800" font-size="9.5" fill="#191a1c" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:3;stroke-linejoin:round;">R8 △0.9%</text>
+<text x="287.0" y="37.0" text-anchor="start" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="8" fill="#6d7076" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:3;stroke-linejoin:round;">全国 +2.9</text>
+<text x="334" y="12" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="8" fill="#6d7076">━ 岩手　- - 全国</text>
+</svg></div>
+  </div>
+
+  <div class="card" style="margin-top:4mm;">
+    <div class="h"><span class="t">用途別 変動率の分布</span><span class="s">令和8年・継続基準地</span></div>
+    <svg viewBox="0 0 700 188" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+<text x="56" y="44.5" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="800" font-size="10.5" fill="#191a1c">住宅地</text>
+<rect x="0" y="39.5" width="0" height="0" fill="none"/>
+<rect x="64.0" y="26" width="10.7" height="30" fill="#991b1b"/>
+<text x="70.1" y="44.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#fff">5</text>
+<rect x="76.2" y="26" width="108.7" height="30" fill="#dc2626"/>
+<text x="131.3" y="44.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#fff">45</text>
+<rect x="186.4" y="26" width="52.4" height="30" fill="#f59e8b"/>
+<text x="213.4" y="44.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#191a1c">22</text>
+<rect x="240.3" y="26" width="111.1" height="30" fill="#d1d5db"/>
+<text x="296.6" y="44.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#191a1c">46</text>
+<rect x="353.0" y="26" width="42.6" height="30" fill="#93b8f0"/>
+<text x="375.0" y="44.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#191a1c">18</text>
+<rect x="397.0" y="26" width="196.9" height="30" fill="#3b82f6"/>
+<text x="496.2" y="44.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#fff">81</text>
+<rect x="595.4" y="26" width="89.1" height="30" fill="#1e3a8a"/>
+<text x="640.7" y="44.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#fff">37</text>
+<text x="686" y="22" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.6" font-weight="700" fill="#6d7076">上昇 72／254地点</text>
+<text x="56" y="92.5" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="800" font-size="10.5" fill="#191a1c">商業地</text>
+<rect x="0" y="87.5" width="0" height="0" fill="none"/>
+<rect x="64.0" y="74" width="16.0" height="30" fill="#991b1b"/>
+<text x="72.8" y="92.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#fff">2</text>
+<rect x="81.5" y="74" width="24.8" height="30" fill="#dc2626"/>
+<text x="94.7" y="92.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#fff">3</text>
+<rect x="107.8" y="74" width="86.1" height="30" fill="#f59e8b"/>
+<text x="151.6" y="92.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#191a1c">10</text>
+<rect x="195.4" y="74" width="94.9" height="30" fill="#d1d5db"/>
+<text x="243.6" y="92.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#191a1c">11</text>
+<rect x="291.8" y="74" width="51.1" height="30" fill="#93b8f0"/>
+<text x="318.1" y="92.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#191a1c">6</text>
+<rect x="344.3" y="74" width="270.1" height="30" fill="#3b82f6"/>
+<text x="480.1" y="92.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#fff">31</text>
+<rect x="615.9" y="74" width="68.6" height="30" fill="#1e3a8a"/>
+<text x="651.0" y="92.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#fff">8</text>
+<text x="686" y="70" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.6" font-weight="700" fill="#6d7076">上昇 15／71地点</text>
+<text x="56" y="140.5" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="800" font-size="10.5" fill="#191a1c">工業地</text>
+<rect x="0" y="135.5" width="0" height="0" fill="none"/>
+<rect x="64.0" y="122" width="94.2" height="30" fill="#991b1b"/>
+<text x="111.8" y="140.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#fff">2</text>
+<rect x="159.7" y="122" width="189.9" height="30" fill="#dc2626"/>
+<text x="255.4" y="140.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#fff">4</text>
+<rect x="351.1" y="122" width="142.0" height="30" fill="#f59e8b"/>
+<text x="422.8" y="140.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#191a1c">3</text>
+<rect x="494.6" y="122" width="94.2" height="30" fill="#d1d5db"/>
+<text x="542.5" y="140.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#191a1c">2</text>
+<rect x="590.3" y="122" width="94.2" height="30" fill="#3b82f6"/>
+<text x="638.2" y="140.5" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="10" font-weight="700" fill="#fff">2</text>
+<text x="686" y="118" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.6" font-weight="700" fill="#6d7076">上昇 9／13地点</text>
+<rect x="64" y="169" width="10" height="10" fill="#991b1b"/>
+<text x="77" y="178" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.6" font-weight="700" fill="#3c3e42">+3%以上</text>
+<rect x="139" y="169" width="10" height="10" fill="#dc2626"/>
+<text x="152" y="178" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.6" font-weight="700" fill="#3c3e42">+1〜3%</text>
+<rect x="214" y="169" width="10" height="10" fill="#f59e8b"/>
+<text x="227" y="178" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.6" font-weight="700" fill="#3c3e42">0〜+1%</text>
+<rect x="289" y="169" width="10" height="10" fill="#d1d5db"/>
+<text x="302" y="178" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.6" font-weight="700" fill="#3c3e42">横ばい 0%</text>
+<rect x="373" y="169" width="10" height="10" fill="#93b8f0"/>
+<text x="386" y="178" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.6" font-weight="700" fill="#3c3e42">△1〜0%</text>
+<rect x="448" y="169" width="10" height="10" fill="#3b82f6"/>
+<text x="461" y="178" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.6" font-weight="700" fill="#3c3e42">△3〜△1%</text>
+<rect x="532" y="169" width="10" height="10" fill="#1e3a8a"/>
+<text x="545" y="178" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.6" font-weight="700" fill="#3c3e42">△3%以上下落</text>
+</svg>
+    <p class="cap">各用途の継続基準地を変動率帯で色分け（数字＝地点数）。住宅地は下落側が過半、工業地のみ上昇側が多数。</p>
+  </div>
+
+  <div class="bigs" style="margin-top:4mm;">
+    <div class="b"><div class="l">住宅地 平均価格</div><div class="v" style="font-size:20pt;">26,800<small>円/㎡</small></div></div>
+    <div class="b"><div class="l">商業地 平均価格</div><div class="v" style="font-size:20pt;">45,900<small>円/㎡</small></div></div>
+    <div class="b"><div class="l">工業地 平均価格</div><div class="v" style="font-size:20pt;">12,900<small>円/㎡</small></div></div>
+    <div class="b"><div class="l">県内最高価格（盛岡駅前通・商業）</div><div class="v" style="font-size:20pt;">336,000<small>円/㎡</small></div></div>
+  </div>
+
+  <div class="tw2" style="margin-top:4mm;">
+    <div class="note" style="margin-top:0;">
+      <h5>全国は上昇、岩手は下落——差の正体</h5>
+      全国の地価は三大都市圏を中心に上昇基調が続く（住宅地+1.0%・商業地+2.9%）。岩手との差は、<b>人口減少地域の広さ</b>に加え、上昇を支えてきた県央都市部の減速が重なったこと。上昇の裾野は、年々狭くなっている。
+    </div>
+    <div class="note" style="margin-top:0;">
+      <h5>工業地は13地点中9地点が上昇</h5>
+      高速道路網の優位性を背景に、<b>物流用地と半導体関連の生産用地</b>の需要が継続（県公表資料より）。ただし平均変動率は+1.7%→+1.1%へ縮小しており、けん引役にも一服感がにじむ。
+    </div>
+  </div>
+
+  <div class="foot"><span class="l">令和8年 岩手県地価調査レポート ／ GREO合同会社</span><span class="r num">02 <i>/</i> 06</span></div>
+</section>
+
+<!-- ============ PAGE 3 / HEATMAP ============ -->
+<section class="page">
+  <div class="mast">
+    <div class="a">GREO <i>MARKET REPORT</i> — LAND PRICE</div>
+    <div class="b">HEATMAP</div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;align-items:baseline;">
+    <h2 class="hl" style="font-size:17.5pt;">343地点、<em>色でみる岩手。</em></h2>
+    <span style="font-size:7.6pt;letter-spacing:.18em;color:var(--mute);font-weight:700;">令和8年 変動率ヒートマップ</span>
+  </div>
+
+  <div style="display:flex;align-items:center;justify-content:space-between;flex-wrap:nowrap;border-top:.4mm solid var(--ink);border-bottom:.15mm solid var(--hair);padding:1.8mm 0;margin-top:2mm;white-space:nowrap;">
+    <span style="font-size:7.4pt;font-weight:800;letter-spacing:.1em;color:var(--ink);">変動率</span>
+    <span class="lgs"><i style="background:#991b1b;"></i>+3%以上</span>
+    <span class="lgs"><i style="background:#dc2626;"></i>+1〜3%</span>
+    <span class="lgs"><i style="background:#f59e8b;"></i>0〜+1%</span>
+    <span class="lgs"><i style="background:#d1d5db;"></i>横ばい0%</span>
+    <span class="lgs"><i style="background:#93b8f0;"></i>△1〜0%</span>
+    <span class="lgs"><i style="background:#3b82f6;"></i>△3〜△1%</span>
+    <span class="lgs"><i style="background:#1e3a8a;"></i>△3%以上</span>
+    <span style="width:.2mm;height:4mm;background:var(--hair);"></span>
+    <span class="lgs"><b style="font-size:9pt;">●</b>住宅</span>
+    <span class="lgs"><b style="font-size:8pt;">■</b>商業</span>
+    <span class="lgs"><b style="font-size:9pt;">◆</b>工業</span>
+  </div>
+
+  <div style="width:153mm;margin:1.5mm auto 0;">
+    <svg viewBox="0 0 376 568" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+<polygon points="221.0,-17.6 453.1,-17.6 453.1,600.8 225.8,600.8 221.0,378.8" fill="#dfe8ef"/>
+<path d="M97.8 263.0L105.9 251.5L110.4 255.1L119.7 250.8L118.5 245.1L115.5 243.1L122.9 244.6L130.2 230.4L139.3 230.2L139.3 219.9L134.9 217.5L136.8 213.4L131.7 212.6L129.9 206.7L126.0 206.7L122.9 195.1L131.4 194.1L140.0 187.6L136.9 180.0L143.6 179.5L146.5 186.5L152.1 188.1L164.4 187.6L166.7 198.8L170.9 201.5L169.2 207.1L172.9 205.6L176.1 209.4L181.9 204.4L202.2 205.0L204.4 202.4L204.9 194.5L206.9 193.6L213.7 196.7L217.1 194.0L222.6 195.2L221.9 202.5L227.7 216.3L220.5 217.8L220.8 222.1L214.7 231.4L198.8 233.1L195.3 242.6L195.4 249.2L198.8 251.0L198.6 254.6L181.1 270.3L184.0 275.5L203.9 288.6L204.2 294.3L201.4 295.2L197.2 290.9L184.8 294.0L173.7 292.6L174.4 289.9L168.3 281.3L164.5 289.5L155.3 281.8L147.0 284.6L142.4 273.8L135.8 272.9L131.2 267.6L123.5 272.8L115.4 272.8L110.2 268.8L111.1 266.6L108.7 264.2L103.4 268.2L97.8 263.0Z" fill="#efeeea"/>
+<path d="M254.2 329.6L248.0 319.0L244.8 319.0L233.6 307.2L227.9 307.9L221.1 303.9L218.9 297.0L203.5 298.0L201.4 295.2L205.2 293.2L203.9 288.6L184.0 275.5L181.1 270.3L198.6 254.6L205.2 259.4L213.1 258.1L220.2 249.8L233.3 250.6L237.1 245.9L245.8 249.1L251.9 234.5L259.1 234.4L265.3 238.6L270.1 235.0L275.1 237.6L278.6 235.6L283.7 241.9L287.3 240.5L294.7 246.3L303.4 239.5L306.7 240.2L306.4 237.1L315.6 234.9L320.2 226.0L316.0 222.5L320.7 220.7L321.5 217.2L327.1 217.3L329.0 213.6L339.8 210.7L339.1 223.8L344.2 227.9L340.3 233.6L344.1 235.8L336.0 242.1L340.2 244.6L339.9 248.8L335.1 255.0L339.8 256.6L335.8 266.9L339.1 268.7L335.7 268.9L336.4 271.2L334.3 271.9L336.1 272.5L337.5 274.6L334.8 272.5L335.3 277.8L334.3 276.1L334.3 280.1L329.8 285.0L333.1 288.0L347.1 266.2L349.5 266.0L348.6 278.6L351.6 280.6L349.4 281.4L351.5 284.3L349.8 291.6L357.0 291.7L357.1 296.1L359.8 295.6L360.2 302.5L355.7 305.1L358.2 307.5L352.1 305.5L349.5 313.8L345.7 315.4L338.6 308.9L336.0 301.3L327.9 298.9L318.8 300.3L311.6 295.2L302.8 299.6L298.5 298.1L282.9 302.6L278.8 311.9L273.3 313.3L271.0 317.0L270.4 322.2L274.9 332.4L264.9 334.7L259.9 329.1L254.2 329.6Z" fill="#efeeea"/>
+<path d="M277.6 469.1L280.0 478.5L275.4 477.8L273.9 474.6L273.1 478.1L267.2 467.9L264.5 457.9L265.8 452.9L262.5 452.4L258.5 456.5L252.5 447.3L249.5 435.7L256.3 422.4L255.1 419.7L264.5 418.0L276.7 409.5L277.3 414.3L281.2 418.6L301.5 416.9L315.0 420.8L323.5 416.3L324.2 416.5L315.6 424.6L306.5 424.2L302.9 428.1L312.0 432.5L312.3 437.3L318.8 435.9L323.8 440.8L314.0 447.3L309.0 441.0L296.8 439.1L298.1 444.0L296.4 445.3L300.2 446.6L300.0 450.1L312.8 453.4L297.8 455.5L307.3 464.7L294.3 466.3L293.3 460.2L289.9 465.3L286.6 463.0L284.2 468.4L278.0 467.1L276.7 464.9L279.2 464.2L277.3 463.4L279.9 457.7L278.2 457.8L279.3 453.8L277.1 451.5L275.2 453.1L275.9 461.0L272.2 466.3L274.5 469.9L277.6 469.1Z" fill="#efeeea"/>
+<path d="M112.7 364.7L113.6 370.6L91.9 360.0L77.9 357.7L74.9 345.3L76.9 337.2L73.7 330.6L76.0 326.2L71.4 324.1L69.3 318.5L72.6 304.7L80.0 301.6L88.0 305.3L92.0 300.7L105.2 307.6L115.5 308.3L117.5 305.9L119.1 311.0L125.0 313.2L140.2 312.4L150.6 318.8L166.6 320.7L171.0 312.5L168.4 309.3L168.6 300.1L172.5 292.8L184.8 294.0L197.2 290.9L203.6 298.1L218.3 296.9L219.9 305.9L214.3 305.4L208.3 309.6L205.5 316.4L206.2 325.9L194.6 332.4L192.3 337.2L177.6 342.1L172.5 352.2L172.0 359.2L174.5 361.9L178.8 361.1L180.0 364.1L177.9 367.2L184.4 374.3L183.5 379.5L189.1 384.3L186.7 391.0L182.2 390.2L178.2 384.3L172.9 386.4L174.3 381.9L170.4 373.0L156.6 376.9L142.7 373.3L145.5 364.9L142.2 359.5L143.4 357.8L140.2 359.7L139.8 355.7L138.2 356.2L139.7 361.3L137.2 362.7L118.9 359.6L112.7 364.7Z" fill="#efeeea"/>
+<path d="M63.7 416.4L63.2 407.4L71.8 399.1L68.7 390.7L73.8 383.9L71.5 378.1L73.1 374.4L68.1 367.0L64.3 354.8L61.0 352.9L61.5 348.7L56.2 345.9L54.1 341.3L55.9 337.1L65.1 334.1L69.5 321.4L76.0 326.2L73.7 330.6L76.9 337.2L74.9 345.3L78.3 358.2L91.9 360.0L113.6 370.6L112.7 364.7L118.9 359.6L137.2 362.7L139.7 361.3L138.2 356.2L139.8 355.7L140.2 359.7L143.4 357.8L142.2 359.5L145.5 364.9L142.7 373.3L146.1 372.5L151.4 376.6L155.9 375.4L161.1 387.9L153.4 391.0L145.2 386.4L140.7 388.7L138.3 394.3L133.4 394.5L133.9 397.2L121.6 401.5L116.9 397.2L118.0 395.2L111.3 394.8L111.5 391.8L108.6 394.7L106.6 393.1L98.2 398.5L85.2 400.4L79.2 412.0L69.6 418.3L63.7 416.4Z" fill="#efeeea"/>
+<path d="M218.6 129.2L217.0 124.3L212.6 122.6L210.3 114.2L215.1 109.1L217.9 100.0L216.6 96.8L219.8 94.4L218.9 91.5L225.0 86.8L226.3 82.4L229.2 84.7L241.6 82.9L256.7 89.0L266.6 87.6L264.2 80.7L276.9 79.8L275.4 78.3L277.6 70.7L286.4 70.7L291.7 63.0L298.2 70.6L302.9 87.8L296.0 88.6L293.9 92.9L295.7 93.7L297.4 96.8L295.9 94.2L292.8 96.3L307.2 103.4L313.0 111.2L309.6 114.9L299.4 113.8L298.5 120.1L291.9 118.8L288.8 122.0L287.7 120.0L279.7 127.4L278.1 133.2L284.2 144.4L275.4 153.6L267.4 151.0L259.5 154.4L251.0 148.1L244.9 149.0L237.8 142.0L228.9 142.0L227.1 133.3L218.6 129.2Z" fill="#efeeea"/>
+<path d="M196.9 410.2L192.1 395.4L186.1 391.4L189.1 384.3L183.5 379.5L184.4 374.3L177.9 367.2L180.0 364.1L178.8 361.1L174.5 361.9L172.0 359.2L172.5 352.2L177.6 342.1L192.3 337.2L194.6 332.4L206.2 325.9L205.5 316.4L208.3 309.6L214.3 305.4L219.9 305.9L218.3 296.9L221.1 303.9L227.9 307.9L233.6 307.2L244.8 319.0L248.0 319.0L254.2 329.6L259.9 329.1L265.3 334.8L274.9 332.4L274.9 338.4L281.2 341.7L274.7 345.1L267.9 343.2L262.6 345.4L260.4 349.9L258.7 361.1L261.6 369.6L260.2 372.1L268.7 374.2L265.6 380.3L269.7 387.5L259.7 396.9L253.9 394.0L246.3 394.1L243.8 396.7L236.2 391.6L231.0 396.8L226.1 395.1L221.6 399.7L215.5 399.7L215.9 407.5L207.3 410.2L206.5 413.0L196.9 410.2Z" fill="#efeeea"/>
+<path d="M78.4 500.5L76.9 497.0L69.8 496.8L55.9 485.4L43.4 487.3L41.1 473.9L46.2 467.7L52.0 469.6L60.2 467.3L65.7 459.2L73.1 458.0L80.2 476.0L94.8 475.0L102.7 482.5L113.9 486.9L125.6 483.9L125.7 490.0L130.0 487.9L129.9 484.1L132.9 481.0L143.9 478.2L145.7 473.9L142.2 468.1L148.8 463.7L147.3 461.6L151.4 455.8L157.4 453.8L164.7 445.1L175.6 447.6L172.8 441.4L172.7 432.1L181.9 429.9L185.5 432.4L185.9 427.2L191.8 425.5L192.8 422.5L195.1 424.7L194.8 429.3L198.2 430.9L199.8 439.8L209.0 440.0L216.8 449.6L216.0 456.2L211.2 461.9L214.6 470.3L212.3 476.9L215.9 479.1L219.5 488.1L217.4 494.3L219.0 501.5L209.0 513.2L209.4 517.6L212.7 519.4L208.7 525.5L210.9 533.0L203.7 534.0L206.2 542.0L199.9 547.5L200.2 541.8L195.8 540.5L195.0 537.4L191.4 538.6L185.0 533.4L180.5 535.2L176.0 530.0L173.7 531.3L173.2 539.5L165.4 538.4L161.5 549.8L151.5 553.7L146.6 544.8L133.0 541.0L133.6 533.6L129.0 532.1L129.0 529.3L124.3 530.0L124.4 525.6L128.9 526.0L134.6 519.6L132.9 512.8L125.0 512.8L121.6 509.5L107.9 513.1L103.8 510.0L96.3 513.8L88.5 503.1L80.8 498.9L78.4 500.5Z" fill="#efeeea"/>
+<path d="M213.2 476.1L214.6 470.3L211.3 460.5L216.0 456.2L216.8 449.6L211.9 443.8L212.8 434.3L219.4 439.0L224.6 438.6L227.0 443.7L228.6 440.6L232.7 443.6L235.4 438.5L244.7 441.9L251.6 438.3L252.4 447.3L258.1 456.1L265.9 453.1L264.4 455.8L267.2 468.0L274.2 479.6L272.2 478.8L269.0 483.5L274.2 484.3L276.8 489.1L272.8 489.6L270.8 493.6L267.2 490.8L267.1 485.2L261.5 479.8L265.3 474.5L261.9 472.1L252.1 473.1L252.5 483.4L237.3 475.2L226.6 476.7L223.1 473.1L218.5 474.7L216.9 480.9L213.2 476.1Z" fill="#efeeea"/>
+<path d="M280.7 418.5L277.3 414.3L276.9 409.3L270.1 404.5L272.6 399.8L271.4 390.1L265.6 380.3L268.7 374.2L260.2 372.1L261.6 369.8L259.0 355.5L262.6 345.4L280.0 343.6L281.3 349.9L288.3 350.4L291.9 356.4L304.4 357.5L314.3 364.8L322.1 364.1L317.8 368.6L322.1 371.2L332.4 366.0L337.2 367.0L342.4 362.7L335.9 374.7L315.6 377.8L325.0 383.4L325.9 388.2L315.9 387.2L319.5 392.6L316.3 395.5L322.0 395.2L322.0 397.7L324.1 398.6L325.7 395.9L336.1 394.4L329.5 397.3L332.2 402.8L330.3 405.1L324.7 403.3L325.5 405.6L319.8 408.9L315.6 407.7L316.5 411.2L309.9 409.8L312.1 411.2L310.6 413.3L316.5 416.5L324.2 415.4L323.0 417.2L315.0 420.8L301.5 416.9L280.7 418.5Z" fill="#efeeea"/>
+<path d="M130.1 126.4L124.7 113.5L113.9 112.3L105.2 103.7L105.3 84.9L117.4 76.7L124.2 75.7L125.7 74.0L123.2 67.7L132.5 61.5L152.2 56.8L162.9 46.0L167.1 47.5L171.4 40.9L178.0 39.5L181.0 42.6L180.4 47.2L184.5 50.7L185.6 61.6L187.7 62.0L193.0 82.3L184.9 85.7L171.0 77.0L166.7 79.6L164.6 77.1L162.3 86.2L145.6 96.3L143.5 105.3L145.3 115.6L138.9 123.3L138.9 127.8L130.1 126.4Z" fill="#efeeea"/>
+<path d="M68.9 196.7L63.3 181.1L63.9 171.8L61.0 164.7L63.5 151.8L60.8 133.1L68.3 126.8L69.7 120.7L67.3 120.0L66.3 114.8L70.3 106.9L64.4 102.4L72.5 95.8L71.8 93.2L75.6 86.4L84.3 84.8L84.1 80.5L87.8 78.3L93.8 87.1L105.4 86.7L105.1 103.6L107.4 107.0L115.8 113.0L124.7 113.5L130.1 126.4L138.3 129.8L135.2 140.7L129.6 143.7L128.7 148.9L130.3 158.7L135.4 166.8L130.1 174.0L134.1 175.8L140.0 187.5L131.4 194.1L119.9 196.3L118.3 200.5L112.7 198.7L99.1 203.6L98.9 206.5L90.7 203.8L84.1 207.6L74.2 205.5L68.9 196.7Z" fill="#efeeea"/>
+<path d="M98.8 478.0L93.8 474.7L79.5 475.6L73.1 458.0L65.7 459.2L60.2 467.3L46.8 468.4L48.3 460.7L52.4 455.8L49.8 454.6L50.5 449.3L38.3 446.6L40.9 439.4L39.1 436.4L42.6 434.6L37.6 429.4L43.6 420.7L49.0 418.0L55.6 417.9L58.0 421.6L72.1 416.3L97.2 431.3L106.3 432.0L125.2 416.1L133.6 413.5L129.5 411.1L130.1 403.6L124.2 400.6L134.1 397.1L133.4 394.5L138.3 394.3L140.7 388.7L145.2 386.4L153.4 391.0L161.1 388.0L156.4 377.9L159.7 374.1L170.5 373.0L174.3 381.9L172.9 386.4L178.2 384.3L181.2 389.5L192.3 395.7L192.0 399.1L198.2 409.4L190.0 414.0L193.9 416.3L193.4 421.3L191.8 425.5L185.9 427.2L185.6 432.3L181.9 429.9L172.7 432.1L172.8 441.4L175.6 447.6L164.6 445.1L157.4 453.8L149.6 457.5L149.4 461.3L147.3 461.6L148.8 463.8L138.0 470.0L132.5 467.2L128.0 469.4L124.3 464.8L125.9 472.1L109.9 473.5L98.8 478.0Z" fill="#efeeea"/>
+<path d="M102.8 245.9L104.0 231.4L99.6 227.9L101.1 211.9L99.1 203.6L112.7 198.7L118.3 200.5L122.9 195.1L126.0 206.7L129.9 206.7L131.7 212.6L136.8 213.4L134.9 217.5L139.3 219.9L139.3 230.1L130.2 230.4L122.9 244.6L115.9 242.6L119.7 250.8L111.1 254.9L106.1 251.4L109.5 251.3L104.5 250.3L102.8 245.9Z" fill="#efeeea"/>
+<path d="M68.2 302.0L63.7 289.6L59.1 285.5L51.7 286.7L48.7 282.7L55.3 267.8L55.4 255.7L43.7 241.0L50.8 237.8L51.2 234.0L61.7 222.4L59.9 218.6L45.8 211.2L47.3 204.6L45.6 198.7L49.7 194.3L56.3 192.9L62.9 199.4L68.9 196.7L74.2 205.5L80.6 207.1L90.7 203.8L98.4 206.0L101.1 211.9L99.6 227.9L104.0 231.4L102.7 246.4L104.5 250.3L109.5 251.3L102.1 254.4L103.5 257.4L101.6 255.8L103.3 257.7L97.6 262.9L103.4 268.2L108.7 266.0L108.0 264.0L111.0 266.5L110.1 268.7L112.2 270.3L109.6 273.7L112.7 276.4L110.4 278.7L114.0 284.3L113.4 287.7L108.9 286.4L107.3 291.0L101.4 292.8L91.6 290.1L89.4 294.9L92.0 300.7L88.2 305.2L79.3 301.6L72.8 304.5L69.9 309.7L66.9 306.0L68.2 302.0Z" fill="#efeeea"/>
+<path d="M196.5 189.4L197.5 183.6L189.9 174.3L190.8 166.1L181.3 165.4L173.7 160.3L173.5 153.5L169.0 146.9L171.8 144.2L169.6 137.8L175.2 140.3L187.8 135.3L181.9 127.0L180.9 121.3L183.3 115.8L179.1 114.1L188.2 108.6L195.9 108.9L192.8 113.7L197.4 116.5L200.1 123.0L206.4 124.1L211.7 119.7L212.9 123.1L217.0 124.3L220.3 132.0L227.0 133.1L228.4 146.0L232.8 149.6L242.8 170.6L239.8 176.9L235.5 179.4L236.5 183.9L233.7 187.4L225.0 185.1L218.6 187.2L215.9 196.4L202.8 194.1L196.5 189.4Z" fill="#efeeea"/>
+<path d="M146.5 186.4L144.8 180.4L136.9 180.0L130.1 174.0L135.4 166.8L130.3 158.6L129.6 143.7L135.2 140.7L137.6 131.2L145.6 137.9L154.7 137.8L160.3 143.5L166.6 143.6L171.9 149.4L173.7 160.3L181.3 165.4L190.8 166.1L190.0 174.4L197.5 183.6L195.8 187.0L198.1 189.6L197.1 191.8L204.8 194.1L204.5 202.3L202.2 205.0L180.7 204.7L176.1 209.4L172.9 205.6L169.2 207.1L170.9 201.5L166.7 198.8L164.4 187.6L146.5 186.4Z" fill="#efeeea"/>
+<path d="M92.7 301.1L89.5 295.2L91.6 290.1L106.0 291.6L108.9 286.4L113.4 287.7L115.8 282.8L120.7 284.1L123.3 290.1L129.3 288.0L128.8 290.0L131.8 291.1L130.1 293.1L135.8 288.2L141.2 290.4L147.5 283.2L153.7 281.7L164.8 289.6L168.3 281.3L174.4 290.0L168.6 300.1L168.4 309.3L171.0 312.5L166.6 320.7L150.6 318.8L140.2 312.4L125.0 313.2L119.1 311.0L117.5 305.9L115.5 308.3L105.2 307.6L92.7 301.1Z" fill="#efeeea"/>
+<path d="M122.6 289.3L120.6 284.1L113.1 283.7L110.4 278.7L112.7 276.4L109.5 272.2L113.0 270.3L123.5 272.8L131.2 267.6L135.8 272.9L142.4 273.8L146.9 283.9L141.2 290.4L135.8 288.2L130.2 293.1L131.8 291.1L128.7 287.6L126.0 290.4L122.6 289.3Z" fill="#efeeea"/>
+<path d="M59.5 421.1L41.3 411.2L40.9 406.3L46.9 402.0L47.1 398.3L29.8 387.5L29.7 379.9L23.9 378.9L24.0 372.5L27.5 367.9L19.5 357.1L20.3 352.4L14.0 350.0L16.6 345.9L15.3 342.3L21.8 339.3L19.8 331.9L21.0 329.0L31.4 321.6L28.8 315.7L35.6 303.9L32.7 294.7L38.7 293.0L41.1 287.6L45.2 286.7L45.6 282.4L51.8 286.7L59.6 285.7L63.7 289.6L63.3 292.8L68.6 302.4L66.9 306.3L71.6 312.3L69.1 315.0L70.6 321.5L65.1 334.1L55.9 337.1L54.1 341.3L56.2 345.9L61.5 348.7L61.0 352.9L67.6 360.6L68.1 367.0L73.1 374.2L71.5 378.1L73.8 383.6L68.7 390.7L71.7 399.2L63.2 407.3L64.0 417.7L59.5 421.1Z" fill="#efeeea"/>
+<path d="M103.5 432.8L72.1 416.3L79.2 412.0L82.5 402.8L111.5 391.8L111.3 394.8L118.0 395.2L116.9 397.2L119.6 400.5L129.7 403.2L129.5 411.1L133.6 413.5L125.2 416.1L120.3 422.1L103.5 432.8Z" fill="#efeeea"/>
+<path d="M100.3 478.6L109.8 473.5L125.9 472.1L124.3 464.8L130.0 469.8L132.5 467.2L138.0 470.0L142.2 468.1L145.7 473.9L143.9 478.2L132.9 481.0L129.9 484.1L130.7 486.9L130.0 487.9L125.7 490.0L126.0 484.0L113.9 486.9L102.7 482.5L100.3 478.6Z" fill="#efeeea"/>
+<path d="M224.7 438.7L214.5 433.9L211.9 441.8L206.1 438.9L199.9 439.9L198.2 430.9L194.8 429.3L195.1 424.7L192.6 422.1L193.9 416.3L190.0 414.0L198.2 410.0L206.6 413.0L207.3 410.2L215.9 407.5L215.5 399.7L221.6 399.7L226.1 395.1L231.0 396.8L236.2 391.6L243.8 396.7L246.3 394.1L253.9 394.0L259.7 396.9L267.7 389.5L271.4 390.1L272.6 399.8L270.1 404.5L276.9 409.3L264.5 418.0L255.1 419.7L256.3 422.4L249.5 435.7L251.6 438.3L244.7 441.9L235.4 438.5L232.7 443.6L228.6 440.6L227.0 443.7L224.7 438.7Z" fill="#efeeea"/>
+<path d="M281.3 349.9L280.1 339.9L274.9 338.4L275.2 331.9L270.4 322.2L272.4 314.2L278.8 311.9L281.6 306.1L289.9 310.9L298.5 326.2L304.1 328.2L310.1 340.5L316.8 347.1L326.1 345.0L331.5 347.1L328.4 353.3L330.5 356.5L334.5 353.8L335.3 355.6L329.9 362.8L322.6 361.0L322.5 364.3L314.3 364.8L304.4 357.5L291.9 356.4L288.3 350.4L281.3 349.9Z" fill="#efeeea"/>
+<path d="M311.3 341.2L304.1 328.2L298.5 326.2L289.9 310.9L282.1 306.7L282.9 302.6L298.5 298.1L302.8 299.6L311.6 295.2L318.8 300.3L329.4 299.0L336.0 301.3L338.6 308.9L346.3 316.0L345.8 322.8L341.0 320.5L332.3 323.4L332.7 329.1L336.6 334.4L342.0 330.5L344.3 332.8L345.3 326.5L351.9 320.6L355.5 320.2L358.2 324.4L352.5 332.4L354.1 338.8L350.8 342.1L346.2 338.6L344.5 343.8L338.8 344.4L337.4 338.5L331.7 347.3L326.1 345.0L317.9 347.5L311.3 341.2Z" fill="#efeeea"/>
+<path d="M197.3 235.2L214.8 231.3L220.8 222.1L220.5 217.8L227.7 216.3L221.9 202.5L222.6 195.2L217.1 194.0L216.6 189.8L225.0 185.1L233.6 187.5L236.5 183.9L235.5 179.4L242.9 170.7L232.8 149.6L228.4 146.0L230.7 141.5L237.8 142.0L244.9 149.0L251.0 148.1L259.5 154.4L267.4 151.0L275.4 153.6L283.6 146.7L296.9 152.3L293.1 156.5L294.6 163.3L287.3 189.4L296.7 190.4L300.7 187.9L304.6 197.2L313.0 201.2L315.7 200.2L314.1 197.2L316.8 201.9L322.8 200.9L333.3 192.5L336.1 193.4L338.0 199.6L336.9 212.3L321.5 217.2L320.7 220.7L316.0 222.5L320.2 226.0L315.6 234.9L306.4 237.1L306.7 240.2L303.4 239.5L294.7 246.3L287.3 240.5L283.7 241.9L278.6 235.6L275.1 237.6L270.1 235.0L265.3 238.6L259.1 234.4L251.9 234.5L245.8 249.1L237.1 245.9L233.3 250.6L220.2 249.8L213.1 258.1L203.2 259.4L195.4 249.2L197.3 235.2Z" fill="#efeeea"/>
+<path d="M315.6 200.3L304.6 197.2L300.7 187.9L296.7 190.4L287.2 189.3L293.5 164.8L303.3 166.1L311.7 163.3L313.2 169.0L331.0 159.9L334.1 171.6L332.8 172.5L333.7 174.0L333.6 174.1L333.7 174.1L333.6 174.3L333.5 174.3L333.5 174.4L329.8 173.9L328.1 178.3L333.3 192.5L322.7 200.9L316.8 201.9L314.1 197.2L315.6 200.3Z" fill="#efeeea"/>
+<path d="M311.3 163.4L303.3 166.1L294.1 164.1L292.7 158.4L294.7 154.4L302.9 150.2L303.9 144.0L305.0 142.2L307.8 139.1L313.4 141.7L320.5 153.9L327.3 153.7L330.6 160.2L313.2 169.0L311.3 163.4Z" fill="#efeeea"/>
+<path d="M210.7 78.5L206.1 68.1L190.1 70.9L187.7 61.9L185.6 61.6L184.5 51.8L192.0 48.3L195.9 40.3L198.3 43.5L206.7 37.5L216.1 37.4L229.7 46.6L240.8 38.2L242.9 42.3L248.5 43.2L242.0 48.3L241.4 53.6L238.2 55.3L241.4 58.1L240.0 61.8L242.9 63.5L241.9 68.7L248.2 71.4L248.0 79.3L241.3 80.6L239.4 84.3L226.4 82.4L224.8 86.9L210.7 78.5Z" fill="#efeeea"/>
+<path d="M279.3 134.9L279.7 127.4L287.6 120.1L288.8 122.0L291.9 118.8L298.5 120.1L300.0 113.6L304.7 115.4L300.5 124.7L302.4 133.2L307.7 139.2L302.7 150.4L297.3 152.8L284.7 148.9L284.1 141.1L279.3 134.9Z" fill="#efeeea"/>
+<path d="M217.9 100.0L214.1 111.6L210.4 113.7L211.7 119.7L206.4 124.1L199.6 122.6L197.4 116.5L192.8 113.7L197.0 105.9L192.5 95.3L194.6 87.3L190.1 70.9L206.1 68.1L210.9 79.8L222.6 86.2L218.9 91.5L219.3 95.6L216.6 96.8L217.9 100.0Z" fill="#efeeea"/>
+<path d="M242.1 80.2L248.1 79.2L248.2 71.4L241.9 68.7L242.9 63.5L240.0 61.8L241.4 58.1L238.2 55.1L248.5 43.2L241.5 40.0L240.8 30.3L244.2 26.1L258.8 20.9L265.6 14.0L283.1 39.7L283.3 44.2L285.9 45.1L286.7 46.0L287.9 54.8L293.2 62.7L286.4 70.7L277.6 70.7L275.4 78.3L276.9 79.8L264.2 80.7L266.6 87.6L250.0 87.8L241.6 83.1L242.1 80.2Z" fill="#efeeea"/>
+<path d="M159.9 142.9L154.7 137.8L145.0 137.6L137.6 131.2L138.9 123.3L145.3 115.6L143.5 105.3L145.6 96.3L162.3 86.2L164.6 77.1L166.7 79.6L171.0 77.0L184.9 85.7L193.0 82.3L194.5 89.0L192.5 95.3L196.6 107.5L187.9 108.7L179.1 114.1L183.3 115.8L180.9 121.3L181.9 127.0L187.8 135.3L175.2 140.3L169.6 137.8L171.8 144.2L169.0 146.9L166.5 143.6L159.9 142.9Z" fill="#efeeea"/>
+<path d="M97.8 263.0L105.9 251.5L110.4 255.1L119.7 250.8L118.5 245.1L115.5 243.1L122.9 244.6L130.2 230.4L139.3 230.2L139.3 219.9L134.9 217.5L136.8 213.4L131.7 212.6L129.9 206.7L126.0 206.7L122.9 195.1L131.4 194.1L140.0 187.6L136.9 180.0L143.6 179.5L146.5 186.5L152.1 188.1L164.4 187.6L166.7 198.8L170.9 201.5L169.2 207.1L172.9 205.6L176.1 209.4L181.9 204.4L202.2 205.0L204.4 202.4L204.9 194.5L206.9 193.6L213.7 196.7L217.1 194.0L222.6 195.2L221.9 202.5L227.7 216.3L220.5 217.8L220.8 222.1L214.7 231.4L198.8 233.1L195.3 242.6L195.4 249.2L198.8 251.0L198.6 254.6L181.1 270.3L184.0 275.5L203.9 288.6L204.2 294.3L201.4 295.2L197.2 290.9L184.8 294.0L173.7 292.6L174.4 289.9L168.3 281.3L164.5 289.5L155.3 281.8L147.0 284.6L142.4 273.8L135.8 272.9L131.2 267.6L123.5 272.8L115.4 272.8L110.2 268.8L111.1 266.6L108.7 264.2L103.4 268.2L97.8 263.0Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M254.2 329.6L248.0 319.0L244.8 319.0L233.6 307.2L227.9 307.9L221.1 303.9L218.9 297.0L203.5 298.0L201.4 295.2L205.2 293.2L203.9 288.6L184.0 275.5L181.1 270.3L198.6 254.6L205.2 259.4L213.1 258.1L220.2 249.8L233.3 250.6L237.1 245.9L245.8 249.1L251.9 234.5L259.1 234.4L265.3 238.6L270.1 235.0L275.1 237.6L278.6 235.6L283.7 241.9L287.3 240.5L294.7 246.3L303.4 239.5L306.7 240.2L306.4 237.1L315.6 234.9L320.2 226.0L316.0 222.5L320.7 220.7L321.5 217.2L327.1 217.3L329.0 213.6L339.8 210.7L339.1 223.8L344.2 227.9L340.3 233.6L344.1 235.8L336.0 242.1L340.2 244.6L339.9 248.8L335.1 255.0L339.8 256.6L335.8 266.9L339.1 268.7L335.7 268.9L336.4 271.2L334.3 271.9L336.1 272.5L337.5 274.6L334.8 272.5L335.3 277.8L334.3 276.1L334.3 280.1L329.8 285.0L333.1 288.0L347.1 266.2L349.5 266.0L348.6 278.6L351.6 280.6L349.4 281.4L351.5 284.3L349.8 291.6L357.0 291.7L357.1 296.1L359.8 295.6L360.2 302.5L355.7 305.1L358.2 307.5L352.1 305.5L349.5 313.8L345.7 315.4L338.6 308.9L336.0 301.3L327.9 298.9L318.8 300.3L311.6 295.2L302.8 299.6L298.5 298.1L282.9 302.6L278.8 311.9L273.3 313.3L271.0 317.0L270.4 322.2L274.9 332.4L264.9 334.7L259.9 329.1L254.2 329.6Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M277.6 469.1L280.0 478.5L275.4 477.8L273.9 474.6L273.1 478.1L267.2 467.9L264.5 457.9L265.8 452.9L262.5 452.4L258.5 456.5L252.5 447.3L249.5 435.7L256.3 422.4L255.1 419.7L264.5 418.0L276.7 409.5L277.3 414.3L281.2 418.6L301.5 416.9L315.0 420.8L323.5 416.3L324.2 416.5L315.6 424.6L306.5 424.2L302.9 428.1L312.0 432.5L312.3 437.3L318.8 435.9L323.8 440.8L314.0 447.3L309.0 441.0L296.8 439.1L298.1 444.0L296.4 445.3L300.2 446.6L300.0 450.1L312.8 453.4L297.8 455.5L307.3 464.7L294.3 466.3L293.3 460.2L289.9 465.3L286.6 463.0L284.2 468.4L278.0 467.1L276.7 464.9L279.2 464.2L277.3 463.4L279.9 457.7L278.2 457.8L279.3 453.8L277.1 451.5L275.2 453.1L275.9 461.0L272.2 466.3L274.5 469.9L277.6 469.1Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M112.7 364.7L113.6 370.6L91.9 360.0L77.9 357.7L74.9 345.3L76.9 337.2L73.7 330.6L76.0 326.2L71.4 324.1L69.3 318.5L72.6 304.7L80.0 301.6L88.0 305.3L92.0 300.7L105.2 307.6L115.5 308.3L117.5 305.9L119.1 311.0L125.0 313.2L140.2 312.4L150.6 318.8L166.6 320.7L171.0 312.5L168.4 309.3L168.6 300.1L172.5 292.8L184.8 294.0L197.2 290.9L203.6 298.1L218.3 296.9L219.9 305.9L214.3 305.4L208.3 309.6L205.5 316.4L206.2 325.9L194.6 332.4L192.3 337.2L177.6 342.1L172.5 352.2L172.0 359.2L174.5 361.9L178.8 361.1L180.0 364.1L177.9 367.2L184.4 374.3L183.5 379.5L189.1 384.3L186.7 391.0L182.2 390.2L178.2 384.3L172.9 386.4L174.3 381.9L170.4 373.0L156.6 376.9L142.7 373.3L145.5 364.9L142.2 359.5L143.4 357.8L140.2 359.7L139.8 355.7L138.2 356.2L139.7 361.3L137.2 362.7L118.9 359.6L112.7 364.7Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M63.7 416.4L63.2 407.4L71.8 399.1L68.7 390.7L73.8 383.9L71.5 378.1L73.1 374.4L68.1 367.0L64.3 354.8L61.0 352.9L61.5 348.7L56.2 345.9L54.1 341.3L55.9 337.1L65.1 334.1L69.5 321.4L76.0 326.2L73.7 330.6L76.9 337.2L74.9 345.3L78.3 358.2L91.9 360.0L113.6 370.6L112.7 364.7L118.9 359.6L137.2 362.7L139.7 361.3L138.2 356.2L139.8 355.7L140.2 359.7L143.4 357.8L142.2 359.5L145.5 364.9L142.7 373.3L146.1 372.5L151.4 376.6L155.9 375.4L161.1 387.9L153.4 391.0L145.2 386.4L140.7 388.7L138.3 394.3L133.4 394.5L133.9 397.2L121.6 401.5L116.9 397.2L118.0 395.2L111.3 394.8L111.5 391.8L108.6 394.7L106.6 393.1L98.2 398.5L85.2 400.4L79.2 412.0L69.6 418.3L63.7 416.4Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M218.6 129.2L217.0 124.3L212.6 122.6L210.3 114.2L215.1 109.1L217.9 100.0L216.6 96.8L219.8 94.4L218.9 91.5L225.0 86.8L226.3 82.4L229.2 84.7L241.6 82.9L256.7 89.0L266.6 87.6L264.2 80.7L276.9 79.8L275.4 78.3L277.6 70.7L286.4 70.7L291.7 63.0L298.2 70.6L302.9 87.8L296.0 88.6L293.9 92.9L295.7 93.7L297.4 96.8L295.9 94.2L292.8 96.3L307.2 103.4L313.0 111.2L309.6 114.9L299.4 113.8L298.5 120.1L291.9 118.8L288.8 122.0L287.7 120.0L279.7 127.4L278.1 133.2L284.2 144.4L275.4 153.6L267.4 151.0L259.5 154.4L251.0 148.1L244.9 149.0L237.8 142.0L228.9 142.0L227.1 133.3L218.6 129.2Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M196.9 410.2L192.1 395.4L186.1 391.4L189.1 384.3L183.5 379.5L184.4 374.3L177.9 367.2L180.0 364.1L178.8 361.1L174.5 361.9L172.0 359.2L172.5 352.2L177.6 342.1L192.3 337.2L194.6 332.4L206.2 325.9L205.5 316.4L208.3 309.6L214.3 305.4L219.9 305.9L218.3 296.9L221.1 303.9L227.9 307.9L233.6 307.2L244.8 319.0L248.0 319.0L254.2 329.6L259.9 329.1L265.3 334.8L274.9 332.4L274.9 338.4L281.2 341.7L274.7 345.1L267.9 343.2L262.6 345.4L260.4 349.9L258.7 361.1L261.6 369.6L260.2 372.1L268.7 374.2L265.6 380.3L269.7 387.5L259.7 396.9L253.9 394.0L246.3 394.1L243.8 396.7L236.2 391.6L231.0 396.8L226.1 395.1L221.6 399.7L215.5 399.7L215.9 407.5L207.3 410.2L206.5 413.0L196.9 410.2Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M78.4 500.5L76.9 497.0L69.8 496.8L55.9 485.4L43.4 487.3L41.1 473.9L46.2 467.7L52.0 469.6L60.2 467.3L65.7 459.2L73.1 458.0L80.2 476.0L94.8 475.0L102.7 482.5L113.9 486.9L125.6 483.9L125.7 490.0L130.0 487.9L129.9 484.1L132.9 481.0L143.9 478.2L145.7 473.9L142.2 468.1L148.8 463.7L147.3 461.6L151.4 455.8L157.4 453.8L164.7 445.1L175.6 447.6L172.8 441.4L172.7 432.1L181.9 429.9L185.5 432.4L185.9 427.2L191.8 425.5L192.8 422.5L195.1 424.7L194.8 429.3L198.2 430.9L199.8 439.8L209.0 440.0L216.8 449.6L216.0 456.2L211.2 461.9L214.6 470.3L212.3 476.9L215.9 479.1L219.5 488.1L217.4 494.3L219.0 501.5L209.0 513.2L209.4 517.6L212.7 519.4L208.7 525.5L210.9 533.0L203.7 534.0L206.2 542.0L199.9 547.5L200.2 541.8L195.8 540.5L195.0 537.4L191.4 538.6L185.0 533.4L180.5 535.2L176.0 530.0L173.7 531.3L173.2 539.5L165.4 538.4L161.5 549.8L151.5 553.7L146.6 544.8L133.0 541.0L133.6 533.6L129.0 532.1L129.0 529.3L124.3 530.0L124.4 525.6L128.9 526.0L134.6 519.6L132.9 512.8L125.0 512.8L121.6 509.5L107.9 513.1L103.8 510.0L96.3 513.8L88.5 503.1L80.8 498.9L78.4 500.5Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M213.2 476.1L214.6 470.3L211.3 460.5L216.0 456.2L216.8 449.6L211.9 443.8L212.8 434.3L219.4 439.0L224.6 438.6L227.0 443.7L228.6 440.6L232.7 443.6L235.4 438.5L244.7 441.9L251.6 438.3L252.4 447.3L258.1 456.1L265.9 453.1L264.4 455.8L267.2 468.0L274.2 479.6L272.2 478.8L269.0 483.5L274.2 484.3L276.8 489.1L272.8 489.6L270.8 493.6L267.2 490.8L267.1 485.2L261.5 479.8L265.3 474.5L261.9 472.1L252.1 473.1L252.5 483.4L237.3 475.2L226.6 476.7L223.1 473.1L218.5 474.7L216.9 480.9L213.2 476.1Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M280.7 418.5L277.3 414.3L276.9 409.3L270.1 404.5L272.6 399.8L271.4 390.1L265.6 380.3L268.7 374.2L260.2 372.1L261.6 369.8L259.0 355.5L262.6 345.4L280.0 343.6L281.3 349.9L288.3 350.4L291.9 356.4L304.4 357.5L314.3 364.8L322.1 364.1L317.8 368.6L322.1 371.2L332.4 366.0L337.2 367.0L342.4 362.7L335.9 374.7L315.6 377.8L325.0 383.4L325.9 388.2L315.9 387.2L319.5 392.6L316.3 395.5L322.0 395.2L322.0 397.7L324.1 398.6L325.7 395.9L336.1 394.4L329.5 397.3L332.2 402.8L330.3 405.1L324.7 403.3L325.5 405.6L319.8 408.9L315.6 407.7L316.5 411.2L309.9 409.8L312.1 411.2L310.6 413.3L316.5 416.5L324.2 415.4L323.0 417.2L315.0 420.8L301.5 416.9L280.7 418.5Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M130.1 126.4L124.7 113.5L113.9 112.3L105.2 103.7L105.3 84.9L117.4 76.7L124.2 75.7L125.7 74.0L123.2 67.7L132.5 61.5L152.2 56.8L162.9 46.0L167.1 47.5L171.4 40.9L178.0 39.5L181.0 42.6L180.4 47.2L184.5 50.7L185.6 61.6L187.7 62.0L193.0 82.3L184.9 85.7L171.0 77.0L166.7 79.6L164.6 77.1L162.3 86.2L145.6 96.3L143.5 105.3L145.3 115.6L138.9 123.3L138.9 127.8L130.1 126.4Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M68.9 196.7L63.3 181.1L63.9 171.8L61.0 164.7L63.5 151.8L60.8 133.1L68.3 126.8L69.7 120.7L67.3 120.0L66.3 114.8L70.3 106.9L64.4 102.4L72.5 95.8L71.8 93.2L75.6 86.4L84.3 84.8L84.1 80.5L87.8 78.3L93.8 87.1L105.4 86.7L105.1 103.6L107.4 107.0L115.8 113.0L124.7 113.5L130.1 126.4L138.3 129.8L135.2 140.7L129.6 143.7L128.7 148.9L130.3 158.7L135.4 166.8L130.1 174.0L134.1 175.8L140.0 187.5L131.4 194.1L119.9 196.3L118.3 200.5L112.7 198.7L99.1 203.6L98.9 206.5L90.7 203.8L84.1 207.6L74.2 205.5L68.9 196.7Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M98.8 478.0L93.8 474.7L79.5 475.6L73.1 458.0L65.7 459.2L60.2 467.3L46.8 468.4L48.3 460.7L52.4 455.8L49.8 454.6L50.5 449.3L38.3 446.6L40.9 439.4L39.1 436.4L42.6 434.6L37.6 429.4L43.6 420.7L49.0 418.0L55.6 417.9L58.0 421.6L72.1 416.3L97.2 431.3L106.3 432.0L125.2 416.1L133.6 413.5L129.5 411.1L130.1 403.6L124.2 400.6L134.1 397.1L133.4 394.5L138.3 394.3L140.7 388.7L145.2 386.4L153.4 391.0L161.1 388.0L156.4 377.9L159.7 374.1L170.5 373.0L174.3 381.9L172.9 386.4L178.2 384.3L181.2 389.5L192.3 395.7L192.0 399.1L198.2 409.4L190.0 414.0L193.9 416.3L193.4 421.3L191.8 425.5L185.9 427.2L185.6 432.3L181.9 429.9L172.7 432.1L172.8 441.4L175.6 447.6L164.6 445.1L157.4 453.8L149.6 457.5L149.4 461.3L147.3 461.6L148.8 463.8L138.0 470.0L132.5 467.2L128.0 469.4L124.3 464.8L125.9 472.1L109.9 473.5L98.8 478.0Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M102.8 245.9L104.0 231.4L99.6 227.9L101.1 211.9L99.1 203.6L112.7 198.7L118.3 200.5L122.9 195.1L126.0 206.7L129.9 206.7L131.7 212.6L136.8 213.4L134.9 217.5L139.3 219.9L139.3 230.1L130.2 230.4L122.9 244.6L115.9 242.6L119.7 250.8L111.1 254.9L106.1 251.4L109.5 251.3L104.5 250.3L102.8 245.9Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M68.2 302.0L63.7 289.6L59.1 285.5L51.7 286.7L48.7 282.7L55.3 267.8L55.4 255.7L43.7 241.0L50.8 237.8L51.2 234.0L61.7 222.4L59.9 218.6L45.8 211.2L47.3 204.6L45.6 198.7L49.7 194.3L56.3 192.9L62.9 199.4L68.9 196.7L74.2 205.5L80.6 207.1L90.7 203.8L98.4 206.0L101.1 211.9L99.6 227.9L104.0 231.4L102.7 246.4L104.5 250.3L109.5 251.3L102.1 254.4L103.5 257.4L101.6 255.8L103.3 257.7L97.6 262.9L103.4 268.2L108.7 266.0L108.0 264.0L111.0 266.5L110.1 268.7L112.2 270.3L109.6 273.7L112.7 276.4L110.4 278.7L114.0 284.3L113.4 287.7L108.9 286.4L107.3 291.0L101.4 292.8L91.6 290.1L89.4 294.9L92.0 300.7L88.2 305.2L79.3 301.6L72.8 304.5L69.9 309.7L66.9 306.0L68.2 302.0Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M196.5 189.4L197.5 183.6L189.9 174.3L190.8 166.1L181.3 165.4L173.7 160.3L173.5 153.5L169.0 146.9L171.8 144.2L169.6 137.8L175.2 140.3L187.8 135.3L181.9 127.0L180.9 121.3L183.3 115.8L179.1 114.1L188.2 108.6L195.9 108.9L192.8 113.7L197.4 116.5L200.1 123.0L206.4 124.1L211.7 119.7L212.9 123.1L217.0 124.3L220.3 132.0L227.0 133.1L228.4 146.0L232.8 149.6L242.8 170.6L239.8 176.9L235.5 179.4L236.5 183.9L233.7 187.4L225.0 185.1L218.6 187.2L215.9 196.4L202.8 194.1L196.5 189.4Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M146.5 186.4L144.8 180.4L136.9 180.0L130.1 174.0L135.4 166.8L130.3 158.6L129.6 143.7L135.2 140.7L137.6 131.2L145.6 137.9L154.7 137.8L160.3 143.5L166.6 143.6L171.9 149.4L173.7 160.3L181.3 165.4L190.8 166.1L190.0 174.4L197.5 183.6L195.8 187.0L198.1 189.6L197.1 191.8L204.8 194.1L204.5 202.3L202.2 205.0L180.7 204.7L176.1 209.4L172.9 205.6L169.2 207.1L170.9 201.5L166.7 198.8L164.4 187.6L146.5 186.4Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M92.7 301.1L89.5 295.2L91.6 290.1L106.0 291.6L108.9 286.4L113.4 287.7L115.8 282.8L120.7 284.1L123.3 290.1L129.3 288.0L128.8 290.0L131.8 291.1L130.1 293.1L135.8 288.2L141.2 290.4L147.5 283.2L153.7 281.7L164.8 289.6L168.3 281.3L174.4 290.0L168.6 300.1L168.4 309.3L171.0 312.5L166.6 320.7L150.6 318.8L140.2 312.4L125.0 313.2L119.1 311.0L117.5 305.9L115.5 308.3L105.2 307.6L92.7 301.1Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M122.6 289.3L120.6 284.1L113.1 283.7L110.4 278.7L112.7 276.4L109.5 272.2L113.0 270.3L123.5 272.8L131.2 267.6L135.8 272.9L142.4 273.8L146.9 283.9L141.2 290.4L135.8 288.2L130.2 293.1L131.8 291.1L128.7 287.6L126.0 290.4L122.6 289.3Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M59.5 421.1L41.3 411.2L40.9 406.3L46.9 402.0L47.1 398.3L29.8 387.5L29.7 379.9L23.9 378.9L24.0 372.5L27.5 367.9L19.5 357.1L20.3 352.4L14.0 350.0L16.6 345.9L15.3 342.3L21.8 339.3L19.8 331.9L21.0 329.0L31.4 321.6L28.8 315.7L35.6 303.9L32.7 294.7L38.7 293.0L41.1 287.6L45.2 286.7L45.6 282.4L51.8 286.7L59.6 285.7L63.7 289.6L63.3 292.8L68.6 302.4L66.9 306.3L71.6 312.3L69.1 315.0L70.6 321.5L65.1 334.1L55.9 337.1L54.1 341.3L56.2 345.9L61.5 348.7L61.0 352.9L67.6 360.6L68.1 367.0L73.1 374.2L71.5 378.1L73.8 383.6L68.7 390.7L71.7 399.2L63.2 407.3L64.0 417.7L59.5 421.1Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M103.5 432.8L72.1 416.3L79.2 412.0L82.5 402.8L111.5 391.8L111.3 394.8L118.0 395.2L116.9 397.2L119.6 400.5L129.7 403.2L129.5 411.1L133.6 413.5L125.2 416.1L120.3 422.1L103.5 432.8Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M100.3 478.6L109.8 473.5L125.9 472.1L124.3 464.8L130.0 469.8L132.5 467.2L138.0 470.0L142.2 468.1L145.7 473.9L143.9 478.2L132.9 481.0L129.9 484.1L130.7 486.9L130.0 487.9L125.7 490.0L126.0 484.0L113.9 486.9L102.7 482.5L100.3 478.6Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M224.7 438.7L214.5 433.9L211.9 441.8L206.1 438.9L199.9 439.9L198.2 430.9L194.8 429.3L195.1 424.7L192.6 422.1L193.9 416.3L190.0 414.0L198.2 410.0L206.6 413.0L207.3 410.2L215.9 407.5L215.5 399.7L221.6 399.7L226.1 395.1L231.0 396.8L236.2 391.6L243.8 396.7L246.3 394.1L253.9 394.0L259.7 396.9L267.7 389.5L271.4 390.1L272.6 399.8L270.1 404.5L276.9 409.3L264.5 418.0L255.1 419.7L256.3 422.4L249.5 435.7L251.6 438.3L244.7 441.9L235.4 438.5L232.7 443.6L228.6 440.6L227.0 443.7L224.7 438.7Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M281.3 349.9L280.1 339.9L274.9 338.4L275.2 331.9L270.4 322.2L272.4 314.2L278.8 311.9L281.6 306.1L289.9 310.9L298.5 326.2L304.1 328.2L310.1 340.5L316.8 347.1L326.1 345.0L331.5 347.1L328.4 353.3L330.5 356.5L334.5 353.8L335.3 355.6L329.9 362.8L322.6 361.0L322.5 364.3L314.3 364.8L304.4 357.5L291.9 356.4L288.3 350.4L281.3 349.9Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M311.3 341.2L304.1 328.2L298.5 326.2L289.9 310.9L282.1 306.7L282.9 302.6L298.5 298.1L302.8 299.6L311.6 295.2L318.8 300.3L329.4 299.0L336.0 301.3L338.6 308.9L346.3 316.0L345.8 322.8L341.0 320.5L332.3 323.4L332.7 329.1L336.6 334.4L342.0 330.5L344.3 332.8L345.3 326.5L351.9 320.6L355.5 320.2L358.2 324.4L352.5 332.4L354.1 338.8L350.8 342.1L346.2 338.6L344.5 343.8L338.8 344.4L337.4 338.5L331.7 347.3L326.1 345.0L317.9 347.5L311.3 341.2Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M197.3 235.2L214.8 231.3L220.8 222.1L220.5 217.8L227.7 216.3L221.9 202.5L222.6 195.2L217.1 194.0L216.6 189.8L225.0 185.1L233.6 187.5L236.5 183.9L235.5 179.4L242.9 170.7L232.8 149.6L228.4 146.0L230.7 141.5L237.8 142.0L244.9 149.0L251.0 148.1L259.5 154.4L267.4 151.0L275.4 153.6L283.6 146.7L296.9 152.3L293.1 156.5L294.6 163.3L287.3 189.4L296.7 190.4L300.7 187.9L304.6 197.2L313.0 201.2L315.7 200.2L314.1 197.2L316.8 201.9L322.8 200.9L333.3 192.5L336.1 193.4L338.0 199.6L336.9 212.3L321.5 217.2L320.7 220.7L316.0 222.5L320.2 226.0L315.6 234.9L306.4 237.1L306.7 240.2L303.4 239.5L294.7 246.3L287.3 240.5L283.7 241.9L278.6 235.6L275.1 237.6L270.1 235.0L265.3 238.6L259.1 234.4L251.9 234.5L245.8 249.1L237.1 245.9L233.3 250.6L220.2 249.8L213.1 258.1L203.2 259.4L195.4 249.2L197.3 235.2Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M315.6 200.3L304.6 197.2L300.7 187.9L296.7 190.4L287.2 189.3L293.5 164.8L303.3 166.1L311.7 163.3L313.2 169.0L331.0 159.9L334.1 171.6L332.8 172.5L333.7 174.0L333.6 174.1L333.7 174.1L333.6 174.3L333.5 174.3L333.5 174.4L329.8 173.9L328.1 178.3L333.3 192.5L322.7 200.9L316.8 201.9L314.1 197.2L315.6 200.3Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M311.3 163.4L303.3 166.1L294.1 164.1L292.7 158.4L294.7 154.4L302.9 150.2L303.9 144.0L305.0 142.2L307.8 139.1L313.4 141.7L320.5 153.9L327.3 153.7L330.6 160.2L313.2 169.0L311.3 163.4Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M210.7 78.5L206.1 68.1L190.1 70.9L187.7 61.9L185.6 61.6L184.5 51.8L192.0 48.3L195.9 40.3L198.3 43.5L206.7 37.5L216.1 37.4L229.7 46.6L240.8 38.2L242.9 42.3L248.5 43.2L242.0 48.3L241.4 53.6L238.2 55.3L241.4 58.1L240.0 61.8L242.9 63.5L241.9 68.7L248.2 71.4L248.0 79.3L241.3 80.6L239.4 84.3L226.4 82.4L224.8 86.9L210.7 78.5Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M279.3 134.9L279.7 127.4L287.6 120.1L288.8 122.0L291.9 118.8L298.5 120.1L300.0 113.6L304.7 115.4L300.5 124.7L302.4 133.2L307.7 139.2L302.7 150.4L297.3 152.8L284.7 148.9L284.1 141.1L279.3 134.9Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M217.9 100.0L214.1 111.6L210.4 113.7L211.7 119.7L206.4 124.1L199.6 122.6L197.4 116.5L192.8 113.7L197.0 105.9L192.5 95.3L194.6 87.3L190.1 70.9L206.1 68.1L210.9 79.8L222.6 86.2L218.9 91.5L219.3 95.6L216.6 96.8L217.9 100.0Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M242.1 80.2L248.1 79.2L248.2 71.4L241.9 68.7L242.9 63.5L240.0 61.8L241.4 58.1L238.2 55.1L248.5 43.2L241.5 40.0L240.8 30.3L244.2 26.1L258.8 20.9L265.6 14.0L283.1 39.7L283.3 44.2L285.9 45.1L286.7 46.0L287.9 54.8L293.2 62.7L286.4 70.7L277.6 70.7L275.4 78.3L276.9 79.8L264.2 80.7L266.6 87.6L250.0 87.8L241.6 83.1L242.1 80.2Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<path d="M159.9 142.9L154.7 137.8L145.0 137.6L137.6 131.2L138.9 123.3L145.3 115.6L143.5 105.3L145.6 96.3L162.3 86.2L164.6 77.1L166.7 79.6L171.0 77.0L184.9 85.7L193.0 82.3L194.5 89.0L192.5 95.3L196.6 107.5L187.9 108.7L179.1 114.1L183.3 115.8L180.9 121.3L181.9 127.0L187.8 135.3L175.2 140.3L169.6 137.8L171.8 144.2L169.0 146.9L166.5 143.6L159.9 142.9Z" fill="none" stroke="#c9cbc5" stroke-width="0.7"/>
+<circle cx="128.7" cy="237.3" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="127.2" cy="240.1" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="144.4" cy="266.3" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="136.5" cy="256.1" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="129.6" cy="249.7" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="125.7" cy="241.9" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="138.8" cy="251.6" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="138.6" cy="235.1" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="134.1" cy="267.5" r="3.4" fill="#991b1b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="133.3" cy="242.2" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="130.7" cy="246.1" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="134.7" cy="253.2" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="140.5" cy="245.0" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="123.0" cy="270.3" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="142.8" cy="248.8" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="139.9" cy="249.5" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="133.4" cy="240.3" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="139.0" cy="253.8" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="135.6" cy="259.6" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="137.9" cy="254.9" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="125.2" cy="240.8" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="138.7" cy="263.2" r="3.4" fill="#991b1b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="137.0" cy="268.2" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="141.8" cy="196.3" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="136.3" cy="263.5" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="130.0" cy="251.0" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="126.9" cy="252.1" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="133.3" cy="258.8" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="139.4" cy="231.8" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="137.5" cy="233.6" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="134.0" cy="237.8" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="132.9" cy="244.3" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="135.9" cy="242.0" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="138.4" cy="245.2" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="128.3" cy="247.7" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="131.3" cy="248.2" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="135.5" cy="247.3" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="139.8" cy="255.0" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="134.4" cy="255.9" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="146.4" cy="260.1" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="138.6" cy="267.3" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="142.7" cy="198.2" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="140.0" cy="272.0" r="3.4" fill="#991b1b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="128.4" cy="255.3" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="140.4" cy="206.2" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="139.6" cy="196.4" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="141.9" cy="246.6" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="126.5" cy="202.9" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="139.4" cy="268.5" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="131.2" cy="255.3" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="131.9" cy="239.6" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="131.6" cy="252.2" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="129.8" cy="248.1" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="127.4" cy="243.1" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="123.5" cy="264.2" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="145.5" cy="234.9" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<rect x="129.4" y="247.8" width="6.1" height="6.1" fill="#991b1b" stroke="#fff" stroke-width="0.8"/>
+<rect x="131.1" y="245.3" width="6.1" height="6.1" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<rect x="133.5" y="247.2" width="6.1" height="6.1" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<rect x="132.7" y="252.7" width="6.1" height="6.1" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<rect x="129.3" y="246.9" width="6.1" height="6.1" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<rect x="131.1" y="248.4" width="6.1" height="6.1" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<rect x="134.4" y="248.3" width="6.1" height="6.1" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<rect x="133.5" y="262.4" width="6.1" height="6.1" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<rect x="129.5" y="248.3" width="6.1" height="6.1" fill="#991b1b" stroke="#fff" stroke-width="0.8"/>
+<rect x="130.6" y="238.2" width="6.1" height="6.1" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<rect x="136.8" y="267.6" width="6.1" height="6.1" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<rect x="128.3" y="246.6" width="6.1" height="6.1" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<rect x="136.9" y="203.2" width="6.1" height="6.1" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<rect x="121.4" y="245.5" width="6.1" height="6.1" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<rect x="125.1" y="253.5" width="6.1" height="6.1" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<path d="M144.6 274.0L148.8 278.2L144.6 282.5L140.3 278.2Z" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<path d="M139.6 206.0L143.9 210.3L139.6 214.5L135.4 210.3Z" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="285.0" cy="270.2" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="335.3" cy="268.1" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="325.4" cy="271.0" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="330.0" cy="277.2" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="330.9" cy="271.7" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="332.3" cy="266.1" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="332.9" cy="242.4" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="293.7" cy="276.6" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="335.4" cy="240.5" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="334.3" cy="224.8" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="302.9" cy="273.1" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="264.6" cy="284.5" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="262.6" cy="310.1" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<rect x="326.6" y="268.4" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="327.0" y="266.6" width="6.1" height="6.1" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<rect x="321.4" y="269.7" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<path d="M333.0 271.5L337.3 275.8L333.0 280.0L328.8 275.8Z" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="274.6" cy="452.8" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="271.1" cy="443.8" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="273.3" cy="450.8" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="272.0" cy="448.3" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="279.7" cy="464.5" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="294.1" cy="457.7" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="298.8" cy="436.9" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="303.2" cy="426.3" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="272.9" cy="473.2" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<rect x="269.1" y="443.8" width="6.1" height="6.1" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<rect x="271.2" y="450.8" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<path d="M273.6 444.1L277.8 448.4L273.6 452.6L269.3 448.4Z" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="125.0" cy="350.0" r="3.4" fill="#991b1b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="157.4" cy="353.0" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="126.9" cy="359.1" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="130.1" cy="334.4" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="123.5" cy="343.6" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="131.4" cy="350.7" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="128.2" cy="345.1" r="3.4" fill="#991b1b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="127.1" cy="354.2" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="153.3" cy="350.8" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="158.9" cy="322.1" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="168.7" cy="324.9" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="166.5" cy="325.1" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="135.2" cy="319.0" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="162.2" cy="358.4" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="137.6" cy="315.0" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<rect x="121.9" y="342.1" width="6.1" height="6.1" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<rect x="123.3" y="347.0" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="165.4" y="323.1" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="132.0" y="315.1" width="6.1" height="6.1" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<rect x="151.4" y="349.0" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="125.7" y="345.2" width="6.1" height="6.1" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="129.6" cy="379.4" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="123.7" cy="390.5" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="129.0" cy="381.6" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="128.0" cy="377.7" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="126.9" cy="385.0" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="126.1" cy="380.8" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="118.3" cy="379.7" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="127.2" cy="379.5" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="106.1" cy="378.7" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="97.9" cy="376.1" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="124.2" cy="379.0" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<rect x="123.9" y="379.8" width="6.1" height="6.1" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<rect x="119.2" y="377.8" width="6.1" height="6.1" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<rect x="122.9" y="373.0" width="6.1" height="6.1" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<path d="M129.7 364.5L134.0 368.7L129.7 373.0L125.5 368.7Z" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="293.0" cy="92.4" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="287.3" cy="98.8" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="284.1" cy="101.5" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="287.0" cy="94.4" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="283.8" cy="94.5" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="238.8" cy="108.7" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="244.0" cy="126.8" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<rect x="282.1" y="93.0" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="284.4" y="93.7" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<path d="M293.7 90.9L298.0 95.1L293.7 99.4L289.5 95.1Z" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="230.4" cy="366.0" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="226.7" cy="369.8" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="187.4" cy="364.6" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="231.3" cy="367.5" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="196.0" cy="357.4" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<rect x="226.5" y="365.4" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="228.8" y="363.9" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="134.6" cy="496.4" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="126.6" cy="495.0" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="134.6" cy="500.7" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="129.9" cy="493.0" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="123.9" cy="494.3" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="130.8" cy="499.9" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="160.3" cy="499.2" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="142.7" cy="526.2" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="140.8" cy="520.4" r="3.4" fill="#e5e7eb" stroke="#fff" stroke-width="0.8"/>
+<circle cx="153.6" cy="543.4" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="179.7" cy="474.7" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="197.5" cy="468.4" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="197.5" cy="470.1" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="180.4" cy="500.2" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="182.8" cy="501.2" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="171.7" cy="521.6" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="160.5" cy="477.0" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="164.3" cy="474.7" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="161.1" cy="488.3" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="132.0" cy="495.2" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="208.5" cy="493.9" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="203.0" cy="494.4" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="163.0" cy="503.8" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="165.5" cy="505.4" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="184.8" cy="516.8" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="186.4" cy="516.6" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="127.2" y="491.8" width="6.1" height="6.1" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<rect x="125.3" y="492.8" width="6.1" height="6.1" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<rect x="141.1" y="525.0" width="6.1" height="6.1" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<rect x="175.9" y="472.7" width="6.1" height="6.1" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<rect x="177.0" y="496.9" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="162.0" y="502.7" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="205.9" y="490.4" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="181.1" y="514.5" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<path d="M137.6 494.3L141.8 498.6L137.6 502.8L133.3 498.6Z" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="252.1" cy="465.6" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="258.6" cy="471.0" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="249.0" cy="473.2" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="243.6" cy="465.3" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="314.3" cy="386.3" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="300.6" cy="388.0" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="311.9" cy="395.9" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="301.2" cy="392.0" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="306.3" cy="389.8" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="290.8" cy="393.1" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<rect x="304.4" y="386.0" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="310.4" y="384.3" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<path d="M293.8 389.7L298.1 393.9L293.8 398.2L289.6 393.9Z" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="172.1" cy="67.5" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="168.0" cy="76.5" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="173.9" cy="55.9" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="174.5" cy="70.8" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="136.2" cy="98.2" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="142.1" cy="93.1" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="167.6" y="70.2" width="6.1" height="6.1" fill="#e5e7eb" stroke="#fff" stroke-width="0.8"/>
+<rect x="167.5" y="68.4" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="133.7" y="95.8" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="168.9" y="59.8" width="6.1" height="6.1" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="121.7" cy="184.5" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="121.4" cy="175.1" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="121.5" cy="188.0" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="114.8" cy="171.3" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="93.4" cy="183.1" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="111.0" cy="179.8" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="91.0" cy="188.8" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="110.7" cy="125.0" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="88.1" cy="111.4" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="110.8" cy="122.9" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="118.9" y="171.4" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="107.5" y="122.2" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="133.6" cy="431.6" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="133.5" cy="437.9" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="134.1" cy="426.8" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="130.6" cy="428.8" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="114.3" cy="461.3" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="131.7" cy="434.1" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="137.3" cy="431.6" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="137.2" cy="437.0" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="136.5" cy="418.7" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="144.1" cy="414.9" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="140.1" cy="410.7" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="142.2" cy="412.7" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="121.7" cy="467.7" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="125.5" cy="469.5" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="129.1" cy="456.9" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="128.7" cy="460.4" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="129.9" cy="458.1" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="120.7" cy="429.4" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="114.4" cy="432.2" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="95.4" cy="434.1" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="129.9" y="426.5" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="132.2" y="424.8" width="6.1" height="6.1" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<rect x="137.5" y="408.3" width="6.1" height="6.1" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<rect x="139.4" y="411.9" width="6.1" height="6.1" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<rect x="115.1" y="439.5" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<path d="M136.1 417.0L140.3 421.2L136.1 425.5L131.8 421.2Z" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<path d="M143.8 402.5L148.0 406.7L143.8 411.0L139.5 406.7Z" fill="#991b1b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="135.0" cy="220.9" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="124.1" cy="240.0" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="119.0" cy="240.1" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="131.1" cy="227.9" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="125.0" cy="236.7" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="133.3" cy="229.2" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="123.2" cy="240.5" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="125.9" cy="235.2" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<rect x="127.7" y="226.5" width="6.1" height="6.1" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="89.3" cy="254.2" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="101.9" cy="248.9" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<rect x="88.2" y="250.2" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="206.6" cy="144.1" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="210.1" cy="144.5" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="203.7" cy="142.5" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="203.7" y="140.8" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="152.5" cy="165.1" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="149.0" cy="182.6" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="149.8" y="164.1" width="6.1" height="6.1" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="139.1" cy="298.6" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="138.5" cy="296.6" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="138.9" cy="290.5" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="137.1" cy="297.4" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="139.6" cy="303.0" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<rect x="136.5" y="295.3" width="6.1" height="6.1" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<path d="M139.2 306.7L143.5 310.9L139.2 315.2L135.0 310.9Z" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="141.0" cy="280.0" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="140.8" cy="274.1" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="135.0" cy="282.1" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="125.0" cy="272.3" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="134.2" cy="278.4" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="135.5" cy="279.0" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="120.6" cy="273.6" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="144.0" cy="284.5" r="3.4" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<circle cx="140.3" cy="278.9" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<rect x="133.5" y="276.7" width="6.1" height="6.1" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<path d="M142.3 275.4L146.6 279.7L142.3 283.9L138.1 279.7Z" fill="#991b1b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="44.7" cy="372.7" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="44.5" cy="375.0" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="49.9" cy="321.1" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="43.3" cy="365.7" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="37.0" cy="339.0" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="41.2" y="371.2" width="6.1" height="6.1" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="126.9" cy="411.3" r="3.4" fill="#f59e8b" stroke="#fff" stroke-width="0.8"/>
+<circle cx="122.7" cy="412.0" r="3.4" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<rect x="119.8" y="401.0" width="6.1" height="6.1" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<rect x="123.0" y="407.8" width="6.1" height="6.1" fill="#d1d5db" stroke="#fff" stroke-width="0.8"/>
+<path d="M118.2 403.3L122.4 407.6L118.2 411.8L113.9 407.6Z" fill="#dc2626" stroke="#fff" stroke-width="0.8"/>
+<circle cx="126.3" cy="478.4" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="126.2" cy="477.3" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="124.4" y="473.7" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="238.9" cy="428.5" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="244.2" cy="412.4" r="3.4" fill="#e5e7eb" stroke="#fff" stroke-width="0.8"/>
+<circle cx="235.3" cy="414.4" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="237.3" y="426.2" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="315.4" cy="360.3" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="328.7" cy="356.8" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="315.8" cy="356.7" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="330.1" cy="327.0" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="325.3" cy="304.4" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="331.1" cy="322.6" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="294.1" cy="205.7" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="333.2" cy="206.1" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="327.5" cy="176.6" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="318.5" cy="180.5" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="316.0" cy="179.0" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="315.2" cy="153.9" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="315.4" cy="155.0" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="312.1" y="151.4" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="212.5" cy="54.2" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<circle cx="214.6" cy="56.5" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="213.7" cy="54.2" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<rect x="208.8" y="50.2" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="299.2" cy="119.6" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="297.5" cy="122.9" r="3.4" fill="#93b8f0" stroke="#fff" stroke-width="0.8"/>
+<rect x="295.5" y="118.4" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="201.6" cy="89.5" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="202.2" cy="94.9" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="199.5" cy="76.1" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<rect x="199.1" y="88.5" width="6.1" height="6.1" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="274.4" cy="27.2" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="253.5" cy="67.8" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="272.3" cy="27.2" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="285.6" cy="48.4" r="3.4" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<circle cx="252.2" cy="64.5" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<rect x="271.0" y="23.6" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<rect x="249.4" y="63.1" width="6.1" height="6.1" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="173.0" cy="89.3" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="171.6" cy="91.2" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<circle cx="172.6" cy="92.5" r="3.4" fill="#1e3a8a" stroke="#fff" stroke-width="0.8"/>
+<rect x="169.1" y="84.3" width="6.1" height="6.1" fill="#3b82f6" stroke="#fff" stroke-width="0.8"/>
+<text x="165.8" y="247.2" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">盛岡</text>
+<text x="246.0" y="284.5" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">宮古</text>
+<text x="272.3" y="431.8" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">大船渡</text>
+<text x="105.2" y="338.4" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">花巻</text>
+<text x="81.7" y="383.5" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">北上</text>
+<text x="257.8" y="115.3" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">久慈</text>
+<text x="222.5" y="355.9" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">遠野</text>
+<text x="178.4" y="489.3" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">一関</text>
+<text x="233.9" y="451.6" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">陸前高田</text>
+<text x="292.2" y="378.0" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">釜石</text>
+<text x="121.3" y="96.7" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">二戸</text>
+<text x="91.9" y="166.4" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">八幡平</text>
+<text x="146.7" y="454.5" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">奥州</text>
+<text x="111.9" y="223.5" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">滝沢</text>
+<text x="72.5" y="245.4" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">雫石</text>
+<text x="213.4" y="166.9" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">葛巻</text>
+<text x="154.4" y="155.1" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">岩手</text>
+<text x="157.5" y="304.4" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">紫波</text>
+<text x="119.4" y="281.9" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">矢巾</text>
+<text x="47.7" y="392.4" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">西和賀</text>
+<text x="98.3" y="415.5" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">金ケ崎</text>
+<text x="106.6" y="482.3" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">平泉</text>
+<text x="224.1" y="430.0" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">住田</text>
+<text x="293.7" y="341.2" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">大槌</text>
+<text x="312.2" y="319.9" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">山田</text>
+<text x="260.6" y="206.0" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">岩泉</text>
+<text x="314.3" y="195.8" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">田野畑</text>
+<text x="306.1" y="162.4" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">普代</text>
+<text x="223.0" y="71.4" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">軽米</text>
+<text x="295.3" y="143.9" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">野田</text>
+<text x="205.9" y="114.0" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">九戸</text>
+<text x="270.1" y="57.7" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">洋野</text>
+<text x="162.2" y="110.9" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-weight="700" font-size="7.6" fill="#7b7e83" style="paint-order:stroke;stroke:#fcfcfb;stroke-width:2.4;stroke-linejoin:round;">一戸</text>
+</svg>
+  </div>
+
+  <p class="cap" style="margin-top:1.5mm;color:var(--mute);">出典：岩手県 令和8年度地価調査より当社作図。基準地の位置・行政区域は国土数値情報（都道府県地価調査・行政区域データ）による。</p>
+
+  <div class="foot"><span class="l">令和8年 岩手県地価調査レポート ／ GREO合同会社</span><span class="r num">03 <i>/</i> 06</span></div>
+</section>
+
+<!-- ============ PAGE 4 / TURN ============ -->
+<section class="page">
+  <div class="mast">
+    <div class="a">GREO <i>MARKET REPORT</i> — LAND PRICE</div>
+    <div class="b">THE TURN</div>
+  </div>
+
+  <div class="kick"><span class="n num">03</span><span class="en">THE TURN</span><span class="ln"></span><span class="dt">勢いの変化</span></div>
+  <h2 class="hl">上りは細く、<em>下りは深く。</em></h2>
+  <p class="dek">前回と勢いを比べると、上昇していた119地点のうち<b>90地点で勢いが低下</b>（上昇幅の縮小65・横ばい化22・下落転換3）。下落していた176地点では<b>86地点で下落幅が拡大</b>した。方向は、はっきり下向きだ。</p>
+
+  <div style="display:grid;grid-template-columns:80mm 1fr;gap:5mm;align-items:start;margin-top:4mm;">
+    <div class="card">
+      <div class="h"><span class="t">前回からの「勢い」の変化</span><span class="s">比較可能338地点</span></div>
+      <svg viewBox="0 0 330 242" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+<text x="8" y="19" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.5" font-weight="800" fill="#191a1c">前回 上昇だった 119地点<tspan fill="#6d7076" font-weight="700"> は…</tspan></text>
+<rect x="8.0" y="24" width="17.1" height="30" rx="2" fill="#dc2626"/>
+<rect x="26.5" y="24" width="56.7" height="30" rx="2" fill="#d1d5db"/>
+<text x="55.5" y="37.0" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="11" font-weight="700" fill="#3c3e42">22</text>
+<text x="55.5" y="48.5" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="7" font-weight="800" fill="#3c3e42">同率</text>
+<rect x="84.5" y="24" width="170.1" height="30" rx="2" fill="#93b8f0"/>
+<text x="170.3" y="37.0" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="12" font-weight="700" fill="#191a1c">65地点</text>
+<text x="170.3" y="49.0" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.2" font-weight="800" fill="#191a1c">上昇幅が縮小</text>
+<rect x="256.0" y="24" width="56.7" height="30" rx="2" fill="#3b82f6"/>
+<text x="285.1" y="37.0" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="11" font-weight="700" fill="#fff">22</text>
+<text x="285.1" y="48.5" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="7" font-weight="800" fill="#fff">横ばいへ</text>
+<rect x="314.1" y="24" width="6.5" height="30" rx="2" fill="#1e3a8a"/>
+<text x="8" y="66.0" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.4" font-weight="700" fill="#6d7076">細い帯: 幅拡大7　下落へ3</text>
+<text x="322" y="66.0" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="9.2" font-weight="800" fill="#191a1c">→ 90地点（76%）で勢いが低下</text>
+<text x="8" y="97" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.5" font-weight="800" fill="#191a1c">前回 横ばいだった 43地点<tspan fill="#6d7076" font-weight="700"> は…</tspan></text>
+<rect x="8.0" y="102" width="5.9" height="30" rx="2" fill="#dc2626"/>
+<rect x="15.3" y="102" width="225.0" height="30" rx="2" fill="#d1d5db"/>
+<text x="128.5" y="115.0" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="12" font-weight="700" fill="#3c3e42">31地点</text>
+<text x="128.5" y="127.0" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.2" font-weight="800" fill="#3c3e42">横ばい継続</text>
+<rect x="241.7" y="102" width="78.9" height="30" rx="2" fill="#3b82f6"/>
+<text x="281.8" y="115.0" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="12" font-weight="700" fill="#fff">11地点</text>
+<text x="281.8" y="127.0" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.2" font-weight="800" fill="#fff">下落へ</text>
+<text x="8" y="144.0" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.4" font-weight="700" fill="#6d7076">細い帯: 上昇へ1</text>
+<text x="322" y="144.0" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="9.2" font-weight="800" fill="#191a1c">→ 11地点が下落側へ</text>
+<text x="8" y="175" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.5" font-weight="800" fill="#191a1c">前回 下落だった 176地点<tspan fill="#6d7076" font-weight="700"> は…</tspan></text>
+<rect x="8.0" y="180" width="2.2" height="30" rx="2" fill="#dc2626"/>
+<rect x="11.6" y="180" width="9.3" height="30" rx="2" fill="#f59e8b"/>
+<rect x="22.3" y="180" width="70.0" height="30" rx="2" fill="#f59e8b"/>
+<text x="58.0" y="193.0" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="12" font-weight="700" fill="#191a1c">40地点</text>
+<text x="58.0" y="205.0" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.2" font-weight="800" fill="#191a1c">下落幅が縮小</text>
+<rect x="93.6" y="180" width="73.5" height="30" rx="2" fill="#d1d5db"/>
+<text x="131.1" y="193.0" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="12" font-weight="700" fill="#3c3e42">42地点</text>
+<text x="131.1" y="205.0" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.2" font-weight="800" fill="#3c3e42">同率</text>
+<rect x="168.6" y="180" width="152.0" height="30" rx="2" fill="#1e3a8a"/>
+<text x="245.3" y="193.0" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="12" font-weight="700" fill="#fff">86地点</text>
+<text x="245.3" y="205.0" text-anchor="middle" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.2" font-weight="800" fill="#fff">下落幅が拡大</text>
+<text x="8" y="222.0" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.4" font-weight="700" fill="#6d7076">細い帯: 上昇へ2　下げ止まり6</text>
+<text x="322" y="222.0" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="9.2" font-weight="800" fill="#191a1c">→ 86地点（49%）で下落が加速</text>
+</svg>
+      <p class="cap">赤系＝勢いが改善／灰＝変わらず／青系＝勢いが悪化。上の帯ほど青く、下の帯ほど青が深い——「上りは細く、下りは深く」。</p>
+      <div style="margin-top:2.5mm;padding:2.2mm 3mm;background:var(--sand);border-left:.8mm solid var(--gold);font-size:8.6pt;line-height:1.6;color:var(--ink2);">
+        <b style="color:var(--ink);">横ばい・下落側から改善したのは49地点どまり。</b>うち40地点は「下落幅の縮小」で、上昇への転換はわずか3地点（大船渡2・北上1）——改善は<b style="color:var(--ink);">「下げ渋り」の形</b>で表れている。
+      </div>
+    </div>
+    <div class="cv-hi">
+      <div class="it">
+        <span class="n num">▼</span>
+        <div><h5>緑が丘・向中野——人気住宅地の転落。</h5>
+        <p>上昇→下落に転じた3地点のうち2つは盛岡市。<b>緑が丘4丁目</b>（58,500円/㎡）が+3.5%→<u>△0.2%</u>、<b>向中野5丁目</b>（96,000円/㎡）が+2.4%→<u>△0.3%</u>。価格水準の高い人気地から先に息切れが始まった。</p></div>
+      </div>
+      <div class="it">
+        <span class="n num">▲</span>
+        <div><h5>大船渡——下落からの反転、県内でここだけ。</h5>
+        <p>下落→上昇の2地点はいずれも大船渡市沿岸部（赤崎町 △4.9%→<em>+1.6%</em>、三陸町綾里 △4.2%→<em>+2.3%</em>）。前年は災害の影響もあって大きく下げた地域で、<b>その影響の緩和</b>が反転につながったとみられる。</p></div>
+      </div>
+      <div class="it">
+        <span class="n num">▲</span>
+        <div><h5>北上・北鬼柳——商業地で唯一の浮上。</h5>
+        <p>横ばい→上昇は<b>北上市北鬼柳</b>（商業地）の+0.7%のみ。工業団地・物流集積に近接する幹線沿いで、産業の熱が商業地ににじみ出た形。</p></div>
+      </div>
+      <div class="it">
+        <span class="n num">▼</span>
+        <div><h5>大槌——沿岸で最大の下落。</h5>
+        <p>住宅地の最大下落は<b>大槌町吉里吉里</b>の<u>△4.3%</u>（前年△2.1%から拡大）。本年の災害の影響が及んだとみられ、沿岸部の変動率には引き続き幅がある。</p></div>
+      </div>
+      <div class="it" style="border-bottom:none;">
+        <span class="n num">▼</span>
+        <div><h5>上昇が止まった22地点、大半は盛岡市内。</h5>
+        <p>上昇→横ばいの22地点のうち19地点が盛岡市内（ほか北上2・奥州1）。本宮・津志田・緑が丘など、<b>昨年+3〜5%上げていた住宅地までが軒並み0%</b>で止まった。</p></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="tw2" style="margin-top:4mm;">
+    <div class="card">
+      <div class="h"><span class="t">向きが変わった6地点</span><span class="s">転落3・反転2・浮上1</span></div>
+      <table class="rk sm">
+        <thead><tr><th>所在（用途）</th><th class="r">R7</th><th class="r">R8</th><th>区分</th></tr></thead>
+        <tbody><tr><td class="a">盛岡市緑が丘4丁目（住宅）</td><td class="r">+3.5%</td><td class="r">△0.2%</td><td class="n" style="color:#2563eb;font-size:7.9pt;">転落</td></tr>
+<tr><td class="a">盛岡市向中野5丁目（住宅）</td><td class="r">+2.4%</td><td class="r">△0.3%</td><td class="n" style="color:#2563eb;font-size:7.9pt;">転落</td></tr>
+<tr><td class="a">奥州市水沢字日高西（住宅）</td><td class="r">+0.7%</td><td class="r">△0.7%</td><td class="n" style="color:#2563eb;font-size:7.9pt;">転落</td></tr>
+<tr><td class="a">大船渡市赤崎町字鳥沢（住宅）</td><td class="r">△4.9%</td><td class="r">+1.6%</td><td class="n" style="color:#dc2626;font-size:7.9pt;">反転</td></tr>
+<tr><td class="a">大船渡市三陸町綾里字中曽根（住宅）</td><td class="r">△4.2%</td><td class="r">+2.3%</td><td class="n" style="color:#dc2626;font-size:7.9pt;">反転</td></tr>
+<tr><td class="a">北上市北鬼柳19地割（商業）</td><td class="r">0.0%</td><td class="r">+0.7%</td><td class="n" style="color:#dc2626;font-size:7.9pt;">浮上</td></tr></tbody>
+      </table>
+      <p class="cap">このほか「下げ止まり」（下落→横ばい）が6地点——花巻・一関2・八幡平2・岩手町。</p>
+    </div>
+    <div class="card">
+      <div class="h"><span class="t">上昇幅の縮小 TOP6</span><span class="s">上昇は継続・勢いの減速</span></div>
+      <table class="rk sm">
+        <thead><tr><th>所在（用途）</th><th class="r">R7</th><th class="r">R8</th><th class="r">減速幅</th></tr></thead>
+        <tbody><tr><td class="a">盛岡市西仙北1丁目（住宅）</td><td class="r">+3.7%</td><td class="r">+1.0%</td><td class="r d">▼2.7pt</td></tr>
+<tr><td class="a">盛岡市青山3丁目（住宅）</td><td class="r">+4.1%</td><td class="r">+1.4%</td><td class="r d">▼2.7pt</td></tr>
+<tr><td class="a">盛岡市月が丘1丁目（住宅）</td><td class="r">+4.3%</td><td class="r">+1.8%</td><td class="r d">▼2.5pt</td></tr>
+<tr><td class="a">盛岡市月が丘3丁目（住宅）</td><td class="r">+4.3%</td><td class="r">+1.8%</td><td class="r d">▼2.5pt</td></tr>
+<tr><td class="a">滝沢市巣子（住宅）</td><td class="r">+4.9%</td><td class="r">+2.5%</td><td class="r d">▼2.4pt</td></tr>
+<tr><td class="a">盛岡市北天昌寺町（住宅）</td><td class="r">+4.1%</td><td class="r">+1.7%</td><td class="r d">▼2.4pt</td></tr></tbody>
+      </table>
+      <p class="cap">県央の人気住宅地で上昇率がほぼ半減。「上昇の質」の変化を示すシグナル。</p>
+    </div>
+  </div>
+
+  <div class="foot"><span class="l">令和8年 岩手県地価調査レポート ／ GREO合同会社</span><span class="r num">04 <i>/</i> 06</span></div>
+</section>
+
+<!-- ============ PAGE 5 / RANKING ============ -->
+<section class="page">
+  <div class="mast">
+    <div class="a">GREO <i>MARKET REPORT</i> — LAND PRICE</div>
+    <div class="b">RANKING</div>
+  </div>
+
+  <div class="kick"><span class="n num">04</span><span class="en">RANKING</span><span class="ln"></span><span class="dt">市町村と地点</span></div>
+  <h2 class="hl">上昇した市町村は、<em>6つ</em>だけになった。</h2>
+  <p class="dek">住宅地の平均変動率がプラスの市町村は6市町のみ——<b>花巻市が脱落し、前回の7市町から一つ減った</b>。残った6市町もいずれも上昇幅は縮小し、33市町村中22で昨年より変動率を下げた。</p>
+
+  <div style="display:grid;grid-template-columns:84mm 1fr;gap:5mm;align-items:start;margin-top:4mm;">
+    <div class="card">
+      <div class="h"><span class="t">市町村別 平均変動率</span><span class="s">住宅地・33市町村</span></div>
+      <svg viewBox="0 0 340 736" xmlns="http://www.w3.org/2000/svg" style="width:100%;height:auto;display:block;">
+<line x1="99.4" y1="16" x2="99.4" y2="721.6000000000001" stroke="#e2e3e6" stroke-width="0.6"/>
+<text x="99.4" y="731.6000000000001" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">-4%</text>
+<line x1="150.2" y1="16" x2="150.2" y2="721.6000000000001" stroke="#e2e3e6" stroke-width="0.6"/>
+<text x="150.2" y="731.6000000000001" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">-2%</text>
+<line x1="251.8" y1="16" x2="251.8" y2="721.6000000000001" stroke="#e2e3e6" stroke-width="0.6"/>
+<text x="251.8" y="731.6000000000001" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="8.2" font-weight="600" fill="#6d7076">+2%</text>
+<line x1="201.0" y1="16" x2="201.0" y2="721.6000000000001" stroke="#191a1c" stroke-width="1"/>
+<text x="201.0" y="731.6000000000001" text-anchor="middle" font-family="Segoe UI,Verdana,sans-serif" font-size="7.5" font-weight="700" fill="#191a1c">0</text>
+<text x="68" y="34.1" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">滝沢市</text>
+<rect x="201.0" y="20.0" width="53.3" height="16.6" rx="2" fill="#dc2626"/>
+<text x="258.3" y="34.1" text-anchor="start" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">+2.1</text>
+<text x="68" y="55.300000000000004" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">紫波町</text>
+<rect x="201.0" y="41.2" width="40.6" height="16.6" rx="2" fill="#dc2626"/>
+<text x="245.6" y="55.300000000000004" text-anchor="start" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">+1.6</text>
+<text x="68" y="76.5" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">矢巾町</text>
+<rect x="201.0" y="62.400000000000006" width="30.5" height="16.6" rx="2" fill="#dc2626"/>
+<text x="235.4" y="76.5" text-anchor="start" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">+1.2</text>
+<text x="68" y="97.70000000000002" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">金ケ崎町</text>
+<rect x="201.0" y="83.60000000000001" width="22.9" height="16.6" rx="2" fill="#f59e8b"/>
+<text x="227.8" y="97.70000000000002" text-anchor="start" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">+0.9</text>
+<text x="68" y="118.9" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">盛岡市</text>
+<rect x="201.0" y="104.80000000000001" width="20.3" height="16.6" rx="2" fill="#f59e8b"/>
+<text x="225.3" y="118.9" text-anchor="start" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">+0.8</text>
+<text x="68" y="140.10000000000002" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">北上市</text>
+<rect x="201.0" y="126.00000000000001" width="20.3" height="16.6" rx="2" fill="#f59e8b"/>
+<text x="225.3" y="140.10000000000002" text-anchor="start" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">+0.8</text>
+<text x="68" y="161.3" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">花巻市</text>
+<rect x="198.4" y="147.20000000000002" width="2.5" height="16.6" rx="2" fill="#93b8f0"/>
+<text x="194.4" y="161.3" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△0.1</text>
+<text x="68" y="182.50000000000003" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">雫石町</text>
+<rect x="190.8" y="168.40000000000003" width="10.2" height="16.6" rx="2" fill="#93b8f0"/>
+<text x="186.8" y="182.50000000000003" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△0.4</text>
+<text x="68" y="203.70000000000002" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">野田村</text>
+<rect x="183.2" y="189.60000000000002" width="17.8" height="16.6" rx="2" fill="#93b8f0"/>
+<text x="179.2" y="203.70000000000002" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△0.7</text>
+<text x="68" y="224.9" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">一関市</text>
+<rect x="175.6" y="210.8" width="25.4" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="171.6" y="224.9" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△1.0</text>
+<text x="68" y="246.10000000000002" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">奥州市</text>
+<rect x="175.6" y="232.00000000000003" width="25.4" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="171.6" y="246.10000000000002" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△1.0</text>
+<text x="68" y="267.30000000000007" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">岩手町</text>
+<rect x="175.6" y="253.20000000000005" width="25.4" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="171.6" y="267.30000000000007" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△1.0</text>
+<text x="68" y="288.50000000000006" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">軽米町</text>
+<rect x="173.0" y="274.40000000000003" width="27.9" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="169.0" y="288.50000000000006" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△1.1</text>
+<text x="68" y="309.70000000000005" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">八幡平市</text>
+<rect x="168.0" y="295.6" width="33.0" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="164.0" y="309.70000000000005" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△1.3</text>
+<text x="68" y="330.9000000000001" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">葛巻町</text>
+<rect x="168.0" y="316.80000000000007" width="33.0" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="164.0" y="330.9000000000001" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△1.3</text>
+<text x="68" y="352.1000000000001" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">平泉町</text>
+<rect x="162.9" y="338.00000000000006" width="38.1" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="158.9" y="352.1000000000001" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△1.5</text>
+<text x="68" y="373.30000000000007" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">陸前高田市</text>
+<rect x="160.3" y="359.20000000000005" width="40.6" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="156.3" y="373.30000000000007" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△1.6</text>
+<text x="68" y="394.50000000000006" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">二戸市</text>
+<rect x="157.8" y="380.40000000000003" width="43.2" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="153.8" y="394.50000000000006" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△1.7</text>
+<text x="68" y="415.70000000000005" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">西和賀町</text>
+<rect x="150.2" y="401.6" width="50.8" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="146.2" y="415.70000000000005" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△2.0</text>
+<text x="68" y="436.9000000000001" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">普代村</text>
+<rect x="150.2" y="422.80000000000007" width="50.8" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="146.2" y="436.9000000000001" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△2.0</text>
+<text x="68" y="458.1000000000001" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">九戸村</text>
+<rect x="150.2" y="444.00000000000006" width="50.8" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="146.2" y="458.1000000000001" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△2.0</text>
+<text x="68" y="479.30000000000007" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">洋野町</text>
+<rect x="150.2" y="465.20000000000005" width="50.8" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="146.2" y="479.30000000000007" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△2.0</text>
+<text x="68" y="500.5000000000001" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">大船渡市</text>
+<rect x="147.6" y="486.4000000000001" width="53.3" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="143.6" y="500.5000000000001" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△2.1</text>
+<text x="68" y="521.7" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">遠野市</text>
+<rect x="147.6" y="507.6000000000001" width="53.3" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="143.6" y="521.7" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△2.1</text>
+<text x="68" y="542.9000000000001" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">宮古市</text>
+<rect x="145.1" y="528.8000000000001" width="55.9" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="141.1" y="542.9000000000001" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△2.2</text>
+<text x="68" y="564.1000000000001" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">釜石市</text>
+<rect x="140.0" y="550.0000000000001" width="60.9" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="136.0" y="564.1000000000001" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△2.4</text>
+<text x="68" y="585.3000000000001" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">住田町</text>
+<rect x="140.0" y="571.2" width="60.9" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="136.0" y="585.3000000000001" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△2.4</text>
+<text x="68" y="606.5000000000001" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">大槌町</text>
+<rect x="127.3" y="592.4000000000001" width="73.6" height="16.6" rx="2" fill="#3b82f6"/>
+<text x="123.3" y="606.5000000000001" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△2.9</text>
+<text x="68" y="627.7000000000002" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">山田町</text>
+<rect x="124.8" y="613.6000000000001" width="76.2" height="16.6" rx="2" fill="#1e3a8a"/>
+<text x="120.8" y="627.7000000000002" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△3.0</text>
+<text x="68" y="648.9000000000001" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">岩泉町</text>
+<rect x="122.2" y="634.8000000000001" width="78.7" height="16.6" rx="2" fill="#1e3a8a"/>
+<text x="118.2" y="648.9000000000001" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△3.1</text>
+<text x="68" y="670.1000000000001" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">田野畑村</text>
+<rect x="117.2" y="656.0000000000001" width="83.8" height="16.6" rx="2" fill="#1e3a8a"/>
+<text x="113.2" y="670.1000000000001" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△3.3</text>
+<text x="68" y="691.3000000000001" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">久慈市</text>
+<rect x="112.1" y="677.2" width="88.9" height="16.6" rx="2" fill="#1e3a8a"/>
+<text x="108.1" y="691.3000000000001" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△3.5</text>
+<text x="68" y="712.5000000000001" text-anchor="end" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="10.2" font-weight="700" fill="#191a1c">一戸町</text>
+<rect x="99.4" y="698.4000000000001" width="101.6" height="16.6" rx="2" fill="#1e3a8a"/>
+<text x="95.4" y="712.5000000000001" text-anchor="end" font-family="Segoe UI,Verdana,sans-serif" font-size="9.4" font-weight="700" fill="#3c3e42">△4.0</text>
+<text x="74" y="12" font-family="Yu Gothic UI,Meiryo,sans-serif" font-size="8.4" font-weight="700" fill="#6d7076">令和8年・住宅地平均</text>
+</svg>
+    </div>
+    <div class="card">
+      <div class="h"><span class="t">基準地 変動率ランキング</span><span class="s">用途別</span></div>
+      <table class="rk sm">
+        <thead><tr><th>#</th><th>所在</th><th class="r">円/㎡</th><th class="r">R8</th></tr></thead>
+        <tbody><tr><td class="sub" colspan="4">住宅地 ─ 上昇 TOP5</td></tr><tr><td class="r num">1</td><td class="a"><span class="ycip" style="background:#059669"></span>盛岡市永井18地割</td><td class="r num">67,500</td><td class="r u">+5.1%</td></tr>
+<tr><td class="r num">2</td><td class="a"><span class="ycip" style="background:#059669"></span>盛岡市三本柳2地割</td><td class="r num">57,700</td><td class="r u">+3.8%</td></tr>
+<tr><td class="r num">3</td><td class="a"><span class="ycip" style="background:#059669"></span>花巻市西大通り1丁目</td><td class="r num">37,700</td><td class="r u">+3.6%</td></tr>
+<tr><td class="r num">4</td><td class="a"><span class="ycip" style="background:#059669"></span>盛岡市西見前12地割</td><td class="r num">55,500</td><td class="r u">+3.5%</td></tr>
+<tr><td class="r num">5</td><td class="a"><span class="ycip" style="background:#059669"></span>花巻市本館1丁目</td><td class="r num">23,500</td><td class="r u">+3.5%</td></tr><tr><td class="sub" colspan="4">住宅地 ─ 下落 TOP5</td></tr><tr><td class="r num">1</td><td class="a"><span class="ycip" style="background:#059669"></span>大槌町吉里吉里1丁目</td><td class="r num">17,900</td><td class="r d">△4.3%</td></tr>
+<tr><td class="r num">2</td><td class="a"><span class="ycip" style="background:#059669"></span>久慈市山形町霜畑第5地割</td><td class="r num">2,920</td><td class="r d">△4.3%</td></tr>
+<tr><td class="r num">3</td><td class="a"><span class="ycip" style="background:#059669"></span>久慈市山形町川井第9地割</td><td class="r num">4,450</td><td class="r d">△4.1%</td></tr>
+<tr><td class="r num">4</td><td class="a"><span class="ycip" style="background:#059669"></span>一戸町岩舘字沢田</td><td class="r num">9,880</td><td class="r d">△4.1%</td></tr>
+<tr><td class="r num">5</td><td class="a"><span class="ycip" style="background:#059669"></span>一戸町西法寺字諏訪野</td><td class="r num">14,200</td><td class="r d">△4.1%</td></tr><tr><td class="sub" colspan="4">商業地 ─ 上昇 TOP3／下落 TOP3</td></tr><tr><td class="r num">1</td><td class="a"><span class="ycip" style="background:#7c3aed"></span>盛岡市盛岡駅前通</td><td class="r num">336,000</td><td class="r u">+9.4%</td></tr>
+<tr><td class="r num">2</td><td class="a"><span class="ycip" style="background:#7c3aed"></span>盛岡市盛岡駅前通</td><td class="r num">188,000</td><td class="r u">+7.4%</td></tr>
+<tr><td class="r num">3</td><td class="a"><span class="ycip" style="background:#7c3aed"></span>盛岡市本宮6丁目</td><td class="r num">108,000</td><td class="r u">+1.9%</td></tr>
+<tr><td class="r num">1</td><td class="a"><span class="ycip" style="background:#7c3aed"></span>西和賀町川尻40地割</td><td class="r num">6,340</td><td class="r d">△4.5%</td></tr>
+<tr><td class="r num">2</td><td class="a"><span class="ycip" style="background:#7c3aed"></span>岩手町大字江刈内第10地割</td><td class="r num">15,800</td><td class="r d">△4.2%</td></tr>
+<tr><td class="r num">3</td><td class="a"><span class="ycip" style="background:#7c3aed"></span>二戸市堀野字馬場</td><td class="r num">30,200</td><td class="r d">△4.1%</td></tr><tr><td class="sub" colspan="4">工業地 ─ 上昇 TOP3／下落 2地点</td></tr><tr><td class="r num">1</td><td class="a"><span class="ycip" style="background:#d97706"></span>奥州市江刺岩谷堂字松長根</td><td class="r num">7,650</td><td class="r u">+4.8%</td></tr>
+<tr><td class="r num">2</td><td class="a"><span class="ycip" style="background:#d97706"></span>矢巾町大字西徳田第8地割</td><td class="r num">19,700</td><td class="r u">+3.1%</td></tr>
+<tr><td class="r num">3</td><td class="a"><span class="ycip" style="background:#d97706"></span>北上市北工業団地</td><td class="r num">12,800</td><td class="r u">+2.4%</td></tr>
+<tr><td class="r num">1</td><td class="a"><span class="ycip" style="background:#d97706"></span>大船渡市盛町字二本枠</td><td class="r num">15,200</td><td class="r d">△1.9%</td></tr>
+<tr><td class="r num">2</td><td class="a"><span class="ycip" style="background:#d97706"></span>釜石市甲子町第9地割</td><td class="r num">17,100</td><td class="r d">△1.2%</td></tr></tbody>
+      </table>
+      <p class="cap">参考：住宅地の県内最高価格は盛岡市本宮3丁目の107,000円/㎡（商業地は盛岡駅前通の336,000円/㎡）。</p>
+    </div>
+  </div>
+
+  <div class="foot"><span class="l">令和8年 岩手県地価調査レポート ／ GREO合同会社</span><span class="r num">05 <i>/</i> 06</span></div>
+</section>
+
+<!-- ============ PAGE 6 / VIEW ============ -->
+<section class="page">
+  <div class="mast">
+    <div class="a">GREO <i>MARKET REPORT</i> — LAND PRICE</div>
+    <div class="b">OUTLOOK</div>
+  </div>
+
+  <div class="kick"><span class="n num">05</span><span class="en">GREO'S VIEW</span><span class="ln"></span><span class="dt">鑑定士の見立て</span></div>
+  <h2 class="hl">地価は「面」から<em>「点」</em>へ。</h2>
+  <p class="dek">全343地点の動きを重ねると、今年の岩手の地価は3つの言葉で説明できる。以下は当社の見解（見立て）です。</p>
+
+  <div class="cv-hi" style="margin-top:5mm;">
+    <div class="it" style="padding:3.4mm 0;">
+      <span class="n num">Ⅰ</span>
+      <div><h5 style="font-size:10.6pt;margin-bottom:1.4mm;">住宅地——「高くなりすぎた」のサイン。</h5>
+      <p style="font-size:9.3pt;line-height:1.7;">建築費の高騰で住宅取得の総コストが家計の上限に接近し、価格水準の高い人気地（緑が丘・向中野）から先に息切れが表れた。上昇の主役は「まだ手が届く価格帯」の郊外——滝沢・矢巾・紫波——に移りつつあるとみられる。</p></div>
+    </div>
+    <div class="it" style="padding:3.4mm 0;">
+      <span class="n num">Ⅱ</span>
+      <div><h5 style="font-size:10.6pt;margin-bottom:1.4mm;">商業地——駅前一極。</h5>
+      <p style="font-size:9.3pt;line-height:1.7;">盛岡駅前通の+9.4%はホテル・インバウンド投資が生んだ「点」の熱で、県内商業地の面的な回復ではない。同じ盛岡中心部でも菜園は+0.9%と温度差が大きく、<b>投資マネーの選別</b>は市街地の中でも進んでいる。</p></div>
+    </div>
+    <div class="it" style="padding:3.4mm 0;border-bottom:none;">
+      <span class="n num">Ⅲ</span>
+      <div><h5 style="font-size:10.6pt;margin-bottom:1.4mm;">工業地——実需の最後の砦、ただし一服へ。</h5>
+      <p style="font-size:9.3pt;line-height:1.7;">物流・半導体の用地需要で8年連続上昇も、上昇幅は縮小（+1.7%→+1.1%）。賃貸物流施設の新規供給に一服感が出ていること（当社「岩手県物流施設レポート」）と整合的で、来年は<b>上昇の持続力</b>が焦点になる。</p></div>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:4mm;">
+    <h5>来年への注視ポイント——この3つ</h5>
+    ①住宅地の<b>下落幅</b>（△0.2%→△0.7%と下げ足が速まったが、これが一時的か）　②盛岡駅前通<b>+9.4%の持続力</b>（ホテル投資の一巡後）　③工業地に<b>上昇9年目</b>があるか——物流施設の供給一服が用地需要にどう効くか。
+  </div>
+
+  <div class="bigs" style="margin-top:5.5mm;">
+    <div class="b"><div class="l">住宅地（3年連続下落）</div><div class="v d">△0.7<small>%</small></div></div>
+    <div class="b"><div class="l">商業地（33年連続下落）</div><div class="v d">△0.9<small>%</small></div></div>
+    <div class="b"><div class="l">工業地（8年連続上昇）</div><div class="v u">+1.1<small>%</small></div></div>
+    <div class="b"><div class="l">上昇した基準地（宅地系340中）</div><div class="v">98<small>地点</small></div><span class="s">前回119地点から約2割減</span></div>
+  </div>
+
+  <div style="margin-top:6.5mm;border-top:.55mm solid var(--ink);border-bottom:.55mm solid var(--ink);padding:5.5mm 2mm;position:relative;text-align:center;">
+    <span style="position:absolute;top:-2.6mm;left:50%;transform:translateX(-50%);background:var(--paper);padding:0 4mm;font-size:7.5pt;letter-spacing:.42em;color:var(--gold);font-weight:800;">むすび</span>
+    <div style="font-family:'Yu Mincho',YuMincho,serif;font-size:12.5pt;font-weight:600;line-height:2;color:var(--ink);">上昇は勢いを欠き、下落は深さを増す。<br>“潮目”の答え合わせは、来年に持ち越し。</div>
+  </div>
+
+  <div style="margin-top:6.5mm;border-top:.4mm solid var(--ink);padding-top:2.5mm;" class="src-grid">
+    <span class="k">出典</span><span>岩手県「令和8年度地価調査結果の概要」「基準地の標準価格及び変動率」「用途別平均変動率の推移」「変動率上位地点一覧」「市町村別用途別平均価格及び平均変動率」（いずれも2026年9月公表）／国土交通省 全国地価調査結果の概要</span>
+    <span class="k">注記</span><span>変動率の集計・転換地点の抽出・地図化はすべて当社。基準地の位置は国土数値情報（都道府県地価調査点データ）、地図は同（行政区域データ）を当社加工。「見立て」と記載した箇所は当社の見解であり、将来の地価動向を保証するものではありません。地名の「ケ／ヶ」は「ケ」に統一して表記</span>
+    <span class="k">制作・発行</span><span>GREO合同会社（不動産鑑定士事務所・盛岡市）　2026年9月　——　本レポートほか各種レポートを <b>www.greo-jp.com/report</b> で公開しています</span>
+  </div>
+
+  <div class="foot"><span class="l">令和8年 岩手県地価調査レポート ／ GREO合同会社</span><span class="r num">06 <i>/</i> 06</span></div>
+</section>
+
+</body>
+</html>
